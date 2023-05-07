@@ -30,6 +30,7 @@ class SmartFormButton extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FW.medium,
+            color: AppColors.white,
           ),
         ),
       ),
