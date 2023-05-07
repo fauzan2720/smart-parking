@@ -2,7 +2,7 @@ part of 'package:smart_parking/core.dart';
 
 class SmartFormInput extends StatelessWidget {
   final String hint;
-  final Widget icon;
+  final AssetImage icon;
   final bool isPassword;
   final String? helperText;
   final TextEditingController? controller;
@@ -42,7 +42,10 @@ class SmartFormInput extends StatelessWidget {
           ),
           prefixIcon: Transform.scale(
             scale: 0.5,
-            child: icon,
+            child: ImageIcon(
+              icon,
+              color: AppColors.grey,
+            ),
           ),
           suffixIcon: isPassword
               ? Transform.scale(
@@ -52,9 +55,12 @@ class SmartFormInput extends StatelessWidget {
                       isShowPassword = !isShowPassword;
                       setState(() {});
                     },
-                    icon: ImageIcon(isShowPassword
-                        ? AppIcons.showPassword
-                        : AppIcons.hidePassword),
+                    icon: ImageIcon(
+                      isShowPassword
+                          ? AppIcons.showPassword
+                          : AppIcons.hidePassword,
+                      color: AppColors.grey,
+                    ),
                   ),
                 )
               : null,
