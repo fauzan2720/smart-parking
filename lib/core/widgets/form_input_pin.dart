@@ -28,8 +28,8 @@ class SmartFormInputPIN extends StatelessWidget {
       decoration: InputDecoration(
         counterText: "",
         hintText: "Masukkan PIN",
-        hintStyle: const TextStyle(
-          color: AppColors.grey,
+        hintStyle: TextStyle(
+          color: AppColors.grey.withOpacity(0.5),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(

@@ -14,12 +14,12 @@ class WidgetsDocumentation extends StatelessWidget {
           children: [
             const SmartFormInput(
               hint: "Username",
-              icon: ImageIcon(AppIcons.user),
+              icon: AppIcons.user,
             ),
             20.0.height,
             const SmartFormInput(
               hint: "Password",
-              icon: ImageIcon(AppIcons.password),
+              icon: AppIcons.password,
               isPassword: true,
             ),
             20.0.height,

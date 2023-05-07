@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
-import 'package:smart_parking/core/widgets/documentation.dart';
+import 'package:smart_parking/features/auth/presentation/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
               primary: AppColors.primary,
             ),
       ),
-      home: const WidgetsDocumentation(),
+      home: const SplashPage(),
     );
   }
 }
