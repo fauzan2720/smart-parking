@@ -32,8 +32,8 @@ class SmartFormInput extends StatelessWidget {
         obscureText: isPassword ? !isShowPassword : isPassword,
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: const TextStyle(
-            color: AppColors.grey,
+          hintStyle: TextStyle(
+            color: AppColors.grey.withOpacity(0.5),
           ),
           enabledBorder: const UnderlineInputBorder(
             borderSide: BorderSide(
