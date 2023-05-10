@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/auth/presentation/widgets/divider_text.dart';
+import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -151,6 +152,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         "Yeay! Register berhasil".succeedBar(context);
+                        context.pushAndRemoveUntil(
+                            const MainPage(), (route) => false);
                       }
                     },
                   ),

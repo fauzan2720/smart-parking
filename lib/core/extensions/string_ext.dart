@@ -48,4 +48,9 @@ extension ValidationExt on String {
     final RegExp phoneRegex = RegExp(r'^0\d{10,12}$');
     return !phoneRegex.hasMatch(this);
   }
+
+  bool isValidLicensePlate() {
+    RegExp plateRegex = RegExp(r'^[A-Z]{1,3}\s?\d{1,4}\s?[A-Z]{0,3}$');
+    return !plateRegex.hasMatch(this);
+  }
 }

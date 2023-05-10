@@ -24,8 +24,4 @@ class AppIcons {
   static const AssetImage parking = AssetImage("assets/icons/ic_parking.png");
   static const AssetImage add = AssetImage("assets/icons/ic_add.png");
   static const AssetImage saldo = AssetImage("assets/icons/ic_saldo.png");
-
-  static const AssetImage back = AssetImage("assets/icons/btn_back.png");
-  static const AssetImage delete = AssetImage("assets/icons/btn_delete.png");
-  static const AssetImage edit = AssetImage("assets/icons/btn_edit.png");
 }
