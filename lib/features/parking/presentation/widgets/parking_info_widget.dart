@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/features/parking/presentation/pages/qr_code_page.dart';
 
 class ParkingInfoWidget extends StatelessWidget {
   const ParkingInfoWidget({super.key});
@@ -50,10 +51,16 @@ class ParkingInfoWidget extends StatelessWidget {
         ),
         Flexible(
           flex: 1,
-          child: QrImage(
-            data: "1234567890",
-            version: QrVersions.auto,
-            size: 120.0,
+          child: InkWell(
+            onTap: () => context.push(const QrCodePage("1234567890")),
+            child: Hero(
+              tag: "1234567890",
+              child: QrImage(
+                data: "1234567890",
+                version: QrVersions.auto,
+                size: 120.0,
+              ),
+            ),
           ),
         ),
       ],
