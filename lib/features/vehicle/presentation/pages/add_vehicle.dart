@@ -72,7 +72,7 @@ class _AddVehicleState extends State<AddVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: stnkImageController,
               hint: "Foto STNK",
               icon: AppIcons.camera,
@@ -85,7 +85,7 @@ class _AddVehicleState extends State<AddVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: frontVehicleImageController,
               hint: "Foto Kendaraan Tampak Depan",
               icon: AppIcons.car,
@@ -98,7 +98,7 @@ class _AddVehicleState extends State<AddVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: backVehicleImageController,
               hint: "Foto Kendaraan Tampak Belakang",
               icon: AppIcons.car,
@@ -111,7 +111,7 @@ class _AddVehicleState extends State<AddVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: userWithVehicleImageController,
               hint: "Foto Kendaraan Dengan Pemilik",
               icon: AppIcons.car,

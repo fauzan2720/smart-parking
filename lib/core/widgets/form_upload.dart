@@ -1,35 +1,42 @@
 part of 'package:smart_parking/core.dart';
 
 class SmartFormUpload extends StatefulWidget {
+  final TextEditingController controller;
   final String hint;
   final AssetImage icon;
   final String? helperText;
-  final TextEditingController? controller;
   final String? Function(String?)? validator;
 
   const SmartFormUpload({
-    Key? key,
+    super.key,
+    required this.controller,
     required this.hint,
     required this.icon,
     this.helperText,
-    this.controller,
     this.validator,
-  }) : super(key: key);
+  });
 
   @override
-  _SmartFormUploadState createState() => _SmartFormUploadState();
+  State<SmartFormUpload> createState() => _SmartFormUploadState();
 }
 
 class _SmartFormUploadState extends State<SmartFormUpload> {
-  late File _imageFile;
+  String? _imageUrl;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.controller.text.isNotEmpty) {
+      _imageUrl = widget.controller.text;
+    }
+  }
 
   void _pickImage() async {
-    final pickedImage =
+    final XFile? pickedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
-      setState(() {
-        _imageFile = File(pickedImage.path);
-      });
+      widget.controller.text = pickedImage.path;
+      setState(() {});
     }
   }
 
@@ -38,62 +45,62 @@ class _SmartFormUploadState extends State<SmartFormUpload> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.hint,
-          style: const TextStyle(
-            color: AppColors.grey,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
-          ),
-        ),
-        const SizedBox(height: 12),
-        InkWell(
-          onTap: _pickImage,
-          child: Container(
-            height: 130,
-            width: 130,
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.grey.withOpacity(0.5)),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: _imageFile == null
-                ? Icon(
-                    Icons.cloud_upload_outlined,
-                    color: AppColors.grey.withOpacity(0.5),
-                    size: 48,
-                  )
-                : ClipRRect(
+        _imageUrl == null
+            ? const SizedBox()
+            : InkWell(
+                onTap: _pickImage,
+                child: Container(
+                  height: 130,
+                  width: 130,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.grey.withOpacity(0.5)),
                     borderRadius: BorderRadius.circular(8),
-                    child: Image.file(
-                      _imageFile,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network(
+                      _imageUrl!,
                       fit: BoxFit.cover,
                     ),
                   ),
-          ),
-        ),
-        const SizedBox(height: 12),
+                ),
+              ),
+        if (_imageUrl != null) 12.0.height,
         TextFormField(
           controller: widget.controller,
           keyboardType: TextInputType.text,
           validator: widget.validator,
           readOnly: true,
           decoration: InputDecoration(
-            prefixIcon: ImageIcon(
-              widget.icon,
-              color: AppColors.grey,
+            hintText: widget.hint,
+            hintStyle: TextStyle(
+              color: AppColors.grey.withOpacity(0.5),
             ),
-            suffixIcon: IconButton(
-              onPressed: () {
-                _pickImage();
-              },
-              icon: ImageIcon(
-                AppIcons.upload,
+            enabledBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.grey,
+              ),
+            ),
+            prefixIcon: Transform.scale(
+              scale: 0.5,
+              child: ImageIcon(
+                widget.icon,
                 color: AppColors.grey,
               ),
             ),
             helperText: widget.helperText,
             helperStyle: const TextStyle(
               color: AppColors.grey,
+            ),
+            suffixIcon: IconButton(
+              onPressed: () {
+                _pickImage();
+              },
+              icon: const ImageIcon(
+                AppIcons.upload,
+                color: AppColors.grey,
+                size: 20.0,
+              ),
             ),
           ),
         ),

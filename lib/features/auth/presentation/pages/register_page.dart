@@ -20,6 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
       TextEditingController();
   final TextEditingController identityNumberController =
       TextEditingController();
+  final TextEditingController identityImageController = TextEditingController();
 
   @override
   void dispose() {
@@ -29,6 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
     passwordController.clear();
     passwordConfirmController.clear();
     identityNumberController.clear();
+    identityImageController.clear();
     super.dispose();
   }
 
@@ -141,6 +143,19 @@ class _RegisterPageState extends State<RegisterPage> {
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Nomor identitas masih kosong";
+                      } else {
+                        return null;
+                      }
+                    },
+                  ),
+                  20.0.height,
+                  SmartFormUpload(
+                    controller: identityImageController,
+                    hint: "Upload Identitas",
+                    icon: AppIcons.identity,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Foto identitas masih kosong";
                       } else {
                         return null;
                       }

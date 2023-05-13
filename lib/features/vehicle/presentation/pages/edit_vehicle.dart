@@ -90,7 +90,7 @@ class _EditVehicleState extends State<EditVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: stnkImageController,
               hint: "Foto STNK",
               icon: AppIcons.camera,
@@ -103,7 +103,7 @@ class _EditVehicleState extends State<EditVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: frontVehicleImageController,
               hint: "Foto Kendaraan Tampak Depan",
               icon: AppIcons.car,
@@ -116,7 +116,7 @@ class _EditVehicleState extends State<EditVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: backVehicleImageController,
               hint: "Foto Kendaraan Tampak Belakang",
               icon: AppIcons.car,
@@ -129,7 +129,7 @@ class _EditVehicleState extends State<EditVehicle> {
               },
             ),
             20.0.height,
-            SmartFormInput(
+            SmartFormUpload(
               controller: userWithVehicleImageController,
               hint: "Foto Kendaraan Dengan Pemilik",
               icon: AppIcons.car,
@@ -140,11 +140,6 @@ class _EditVehicleState extends State<EditVehicle> {
                   return null;
                 }
               },
-            ),
-            20.0.height,
-            SmartFormUpload(
-              hint: 'Upload STNK',
-              icon: AppIcons.camera,
             ),
             40.0.height,
             SmartFormButton(
