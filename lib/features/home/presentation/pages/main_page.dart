@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 import 'package:smart_parking/features/home/presentation/pages/home_page.dart';
+import 'package:smart_parking/features/parking/presentation/pages/history_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -26,7 +27,7 @@ class MainPage extends StatelessWidget {
       case 1:
         return const Center(child: Text("Voucher"));
       case 2:
-        return const Center(child: Text("Riwayat Transaksi"));
+        return const HistoryPage();
       default:
         return const HomePage();
     }

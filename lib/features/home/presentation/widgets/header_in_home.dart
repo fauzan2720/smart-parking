@@ -74,7 +74,7 @@ class HeaderInHome extends StatelessWidget {
                 onPressed: onTopUpSaldoTap,
               ),
               ButtonInHome(
-                label: 'Lokasi',
+                label: 'Eksplor',
                 icon: AppIcons.parking,
                 onPressed: onSearchLocationTap,
               ),

@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/features/parking/presentation/pages/ticket_page.dart';
 
 class HistoryCard extends StatelessWidget {
-  final void Function() onSeeTap;
-
-  const HistoryCard({
-    super.key,
-    required this.onSeeTap,
-  });
+  const HistoryCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +73,7 @@ class HistoryCard extends StatelessWidget {
           ),
           const Spacer(),
           GestureDetector(
-            onTap: onSeeTap,
+            onTap: () => context.push(const TicketPage()),
             child: Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
