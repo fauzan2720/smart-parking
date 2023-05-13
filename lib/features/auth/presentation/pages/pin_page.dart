@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
 
 class PinPage extends StatefulWidget {
   final String appBarTitle;
+  final String buttonLabel;
+  final void Function(String value) onPressed;
 
   const PinPage({
     super.key,
     this.appBarTitle = "Konfirmasi",
+    this.buttonLabel = "Konfirmasi Sekarang",
+    required this.onPressed,
   });
 
   @override
@@ -43,12 +46,10 @@ class _PinPageState extends State<PinPage> {
               ),
               25.0.height,
               SmartFormButton(
-                text: "Daftar Sekarang",
+                text: widget.buttonLabel,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    "Yeay! Register berhasil".succeedBar(context);
-                    context.pushAndRemoveUntil(
-                        const MainPage(), (route) => false);
+                    widget.onPressed(pinController.text);
                   }
                 },
               ),
