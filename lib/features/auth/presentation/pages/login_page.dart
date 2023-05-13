@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/auth/presentation/pages/register_page.dart';
 import 'package:smart_parking/features/auth/presentation/widgets/divider_text.dart';
+import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -76,6 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       "Yeay! Login berhasil".succeedBar(context);
+                      context.pushAndRemoveUntil(
+                          const MainPage(), (route) => false);
                     }
                   },
                 ),

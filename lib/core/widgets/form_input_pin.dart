@@ -11,6 +11,7 @@ class SmartFormInputPIN extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: true,
       textAlign: TextAlign.center,
       textAlignVertical: TextAlignVertical.center,
       controller: controller,

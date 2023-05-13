@@ -25,15 +25,6 @@ extension NavigatorExt on BuildContext {
     );
   }
 
-  Future<T?> pushNamed<T extends Object>(String routeName,
-      [Object? args]) async {
-    return Navigator.pushNamed<T>(
-      this,
-      routeName,
-      arguments: args,
-    );
-  }
-
   Future<T?> pushReplacement<T extends Object, TO extends Object>(Widget widget,
       [String? name]) async {
     return Navigator.pushReplacement<T, TO>(
@@ -45,24 +36,16 @@ extension NavigatorExt on BuildContext {
     );
   }
 
-  Future<T?> pushReplacementNamed<T extends Object, TO extends Object>(
-      String routeName,
-      [Object? args]) async {
-    return Navigator.pushReplacementNamed<T, TO>(
+  Future<T?> pushAndRemoveUntil<T extends Object>(
+      Widget widget, bool Function(Route<dynamic> route) predicate,
+      [String? name]) async {
+    return Navigator.pushAndRemoveUntil<T>(
       this,
-      routeName,
-      arguments: args,
-    );
-  }
-
-  Future<T?> pushNamedAndRemoveUntil<T extends Object>(
-      String routeName, bool Function(Route<dynamic> route) predicate,
-      [Object? args]) async {
-    return Navigator.pushNamedAndRemoveUntil<T>(
-      this,
-      routeName,
+      MaterialPageRoute(
+        builder: (context) => widget,
+        settings: RouteSettings(name: name),
+      ),
       predicate,
-      arguments: args,
     );
   }
 }
