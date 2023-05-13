@@ -10,11 +10,12 @@ class HeaderInHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-          horizontal: AppSizes.primary, vertical: 20.0),
+          horizontal: AppSizes.primary, vertical: 25.0),
       color: AppColors.primary,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          5.0.height,
           Row(
             children: [
               const ImageIcon(
@@ -30,22 +31,10 @@ class HeaderInHome extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              TextButton(
-                onPressed: () => context.push(const VehiclePage()),
-                child: Row(
-                  children: [
-                    const Text(
-                      "P 5937 GF",
-                      style: TextStyle(
-                        color: AppColors.white,
-                      ),
-                    ),
-                    5.0.width,
-                    const ImageIcon(
-                      AppIcons.add,
-                      color: AppColors.white,
-                    ),
-                  ],
+              const Text(
+                "P 5937 GF",
+                style: TextStyle(
+                  color: AppColors.white,
                 ),
               ),
             ],
@@ -80,9 +69,9 @@ class HeaderInHome extends StatelessWidget {
                 onPressed: () {},
               ),
               ButtonInHome(
-                label: 'QR Code',
-                icon: AppIcons.qrcode,
-                onPressed: () {},
+                label: 'Kendaraan',
+                icon: AppIcons.car2,
+                onPressed: () => context.push(const VehiclePage()),
               ),
               ButtonInHome(
                 label: 'Bayar',
