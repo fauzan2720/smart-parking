@@ -6,6 +6,7 @@ import 'package:smart_parking/core/utils/injector.dart' as di;
 import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 
 export 'package:get_it/get_it.dart';
+export 'package:qr_flutter/qr_flutter.dart';
 
 part 'package:smart_parking/core/constants/box_shadow.dart';
 part 'package:smart_parking/core/constants/colors.dart';

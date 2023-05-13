@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 
 class HistoryCard extends StatelessWidget {
-  const HistoryCard({super.key});
+  final void Function() onSeeTap;
+
+  const HistoryCard({
+    super.key,
+    required this.onSeeTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,18 +76,21 @@ class HistoryCard extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: const Text(
-              "Lihat",
-              style: TextStyle(
-                fontSize: 12.0,
-                color: AppColors.white,
+          GestureDetector(
+            onTap: onSeeTap,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: const Text(
+                "Lihat",
+                style: TextStyle(
+                  fontSize: 12.0,
+                  color: AppColors.white,
+                ),
               ),
             ),
           ),

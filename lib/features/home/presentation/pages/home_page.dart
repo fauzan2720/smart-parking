@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/widgets/header_in_home.dart';
-import 'package:smart_parking/features/home/presentation/widgets/history_card.dart';
+import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
+import 'package:smart_parking/features/parking/presentation/pages/ticket_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -89,7 +90,9 @@ class HomePage extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           padding: const EdgeInsets.symmetric(horizontal: AppSizes.primary),
           itemCount: 1,
-          itemBuilder: (context, index) => const HistoryCard(),
+          itemBuilder: (context, index) => HistoryCard(
+            onSeeTap: () => context.push(const TicketPage()),
+          ),
         ),
         30.0.height,
       ],
