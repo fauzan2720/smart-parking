@@ -162,7 +162,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 40.0.height,
                 SmartFormButton(
-                  text: "Daftar",
+                  text: "Lanjutkan",
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       context.push(const PinPage(
