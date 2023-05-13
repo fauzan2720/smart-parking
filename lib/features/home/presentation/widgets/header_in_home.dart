@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/widgets/button_in_home.dart';
-import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
 
 class HeaderInHome extends StatelessWidget {
-  const HeaderInHome({super.key});
+  final void Function() onTopUpSaldoTap;
+  final void Function() onSearchLocationTap;
+  final void Function() onVehicleTap;
+  final void Function() onPayTap;
+
+  const HeaderInHome({
+    super.key,
+    required this.onTopUpSaldoTap,
+    required this.onSearchLocationTap,
+    required this.onVehicleTap,
+    required this.onPayTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -61,22 +71,22 @@ class HeaderInHome extends StatelessWidget {
               ButtonInHome(
                 label: 'Isi Saldo',
                 icon: AppIcons.saldo,
-                onPressed: () {},
+                onPressed: onTopUpSaldoTap,
               ),
               ButtonInHome(
                 label: 'Lokasi',
                 icon: AppIcons.parking,
-                onPressed: () {},
+                onPressed: onSearchLocationTap,
               ),
               ButtonInHome(
                 label: 'Kendaraan',
                 icon: AppIcons.car2,
-                onPressed: () => context.push(const VehiclePage()),
+                onPressed: onVehicleTap,
               ),
               ButtonInHome(
                 label: 'Bayar',
                 icon: AppIcons.scanQrcode,
-                onPressed: () {},
+                onPressed: onPayTap,
               ),
             ],
           ),
