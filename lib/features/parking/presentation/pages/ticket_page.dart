@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/parking_address_widget.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/parking_in_out_widget.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/parking_info_widget.dart';
@@ -27,7 +28,13 @@ class TicketPage extends StatelessWidget {
             ),
             20.0.height,
             ParkingInOutWidget(
-              onScanOutTap: () {},
+              onScanOutTap: () => context.push(PayPage(
+                onDetect: (value) {
+                  'Barcode found! $value'.infoBar(context);
+                  context.pushAndRemoveUntil(
+                      const TicketPage(), (route) => route.isFirst);
+                },
+              )),
             ),
             20.0.height,
             const Divider(
