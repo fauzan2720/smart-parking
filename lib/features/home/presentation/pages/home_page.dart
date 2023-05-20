@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/widgets/header_in_home.dart';
 import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
+import 'package:smart_parking/features/parking/presentation/pages/explore_parking_page.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
 import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
 
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
       children: [
         HeaderInHome(
           onTopUpSaldoTap: () {},
-          onSearchLocationTap: () {},
+          onSearchLocationTap: () => context.push(const ExploreParkingPage()),
           onVehicleTap: () => context.push(const VehiclePage()),
           onPayTap: () => context.push(PayPage(
             onDetect: (value) {
