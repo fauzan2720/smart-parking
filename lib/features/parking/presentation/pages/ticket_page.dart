@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
+import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/parking_address_widget.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/parking_in_out_widget.dart';
@@ -59,7 +62,15 @@ class TicketPage extends StatelessWidget {
             4.0.height,
             SmartFormButton(
               text: "Bayar Sekarang | ${5000.currencyFormatRp}",
-              onPressed: () {},
+              onPressed: () async {
+                final bool pinSuccess =
+                    await context.push<bool>(const PinPage()) ?? false;
+
+                if (pinSuccess && context.mounted) {
+                  context.popToRoot();
+                  context.read<PageBloc>().add(2);
+                }
+              },
             ),
             10.0.height,
             SmartFormOutlinedButton(

@@ -4,13 +4,11 @@ import 'package:smart_parking/core.dart';
 class PinPage extends StatefulWidget {
   final String appBarTitle;
   final String buttonLabel;
-  final void Function(String value) onPressed;
 
   const PinPage({
     super.key,
     this.appBarTitle = "Konfirmasi",
     this.buttonLabel = "Konfirmasi Sekarang",
-    required this.onPressed,
   });
 
   @override
@@ -49,7 +47,7 @@ class _PinPageState extends State<PinPage> {
                 text: widget.buttonLabel,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    widget.onPressed(pinController.text);
+                    context.pop(true);
                   }
                 },
               ),

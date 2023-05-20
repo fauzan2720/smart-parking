@@ -164,17 +164,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 40.0.height,
                 SmartFormButton(
                   text: "Lanjutkan",
-                  onPressed: () {
+                  onPressed: () async {
                     if (formKey.currentState!.validate()) {
-                      context.push(PinPage(
-                        appBarTitle: "Buat Pin",
-                        buttonLabel: "Daftar Sekarang",
-                        onPressed: (value) {
-                          "Yeay! Register berhasil".succeedBar(context);
-                          context.pushAndRemoveUntil(
-                              const MainPage(), (route) => false);
-                        },
-                      ));
+                      final bool pinSuccess =
+                          await context.push<bool>(const PinPage(
+                                appBarTitle: "Buat Pin",
+                                buttonLabel: "Daftar Sekarang",
+                              )) ??
+                              false;
+
+                      if (pinSuccess && context.mounted) {
+                        "Yeay! Register berhasil".succeedBar(context);
+                        context.pushAndRemoveUntil(
+                            const MainPage(), (route) => false);
+                      }
                     }
                   },
                 ),
