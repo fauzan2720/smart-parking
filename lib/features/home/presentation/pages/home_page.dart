@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/widgets/header_in_home.dart';
-import 'package:smart_parking/features/home/presentation/widgets/history_card.dart';
+import 'package:smart_parking/features/parking/presentation/pages/parking_now_page.dart';
+import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
+import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
+import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,7 +13,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const HeaderInHome(),
+        HeaderInHome(
+          onTopUpSaldoTap: () {},
+          onParkingTap: () => context.push(const ParkingNowPage()),
+          onVehicleTap: () => context.push(const VehiclePage()),
+          onPayTap: () => context.push(PayPage(
+            onDetect: (value) {
+              'Barcode found! $value'.infoBar(context);
+              context.popToRoot();
+            },
+          )),
+        ),
         15.0.height,
         Container(
           margin: const EdgeInsets.symmetric(horizontal: AppSizes.primary),

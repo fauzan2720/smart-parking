@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/widgets/button_in_home.dart';
-import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
 
 class HeaderInHome extends StatelessWidget {
-  const HeaderInHome({super.key});
+  final void Function() onTopUpSaldoTap;
+  final void Function() onParkingTap;
+  final void Function() onVehicleTap;
+  final void Function() onPayTap;
+
+  const HeaderInHome({
+    super.key,
+    required this.onTopUpSaldoTap,
+    required this.onParkingTap,
+    required this.onVehicleTap,
+    required this.onPayTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-          horizontal: AppSizes.primary, vertical: 20.0),
+          horizontal: AppSizes.primary, vertical: 25.0),
       color: AppColors.primary,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          5.0.height,
           Row(
             children: [
               const ImageIcon(
@@ -30,22 +41,10 @@ class HeaderInHome extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              TextButton(
-                onPressed: () => context.push(const VehiclePage()),
-                child: Row(
-                  children: [
-                    const Text(
-                      "P 5937 GF",
-                      style: TextStyle(
-                        color: AppColors.white,
-                      ),
-                    ),
-                    5.0.width,
-                    const ImageIcon(
-                      AppIcons.add,
-                      color: AppColors.white,
-                    ),
-                  ],
+              const Text(
+                "P 5937 GF",
+                style: TextStyle(
+                  color: AppColors.white,
                 ),
               ),
             ],
@@ -72,22 +71,22 @@ class HeaderInHome extends StatelessWidget {
               ButtonInHome(
                 label: 'Isi Saldo',
                 icon: AppIcons.saldo,
-                onPressed: () {},
+                onPressed: onTopUpSaldoTap,
               ),
               ButtonInHome(
-                label: 'Lokasi',
+                label: 'Parkir',
                 icon: AppIcons.parking,
-                onPressed: () {},
+                onPressed: onParkingTap,
               ),
               ButtonInHome(
-                label: 'QR Code',
-                icon: AppIcons.qrcode,
-                onPressed: () {},
+                label: 'Kendaraan',
+                icon: AppIcons.car2,
+                onPressed: onVehicleTap,
               ),
               ButtonInHome(
                 label: 'Bayar',
                 icon: AppIcons.scanQrcode,
-                onPressed: () {},
+                onPressed: onPayTap,
               ),
             ],
           ),

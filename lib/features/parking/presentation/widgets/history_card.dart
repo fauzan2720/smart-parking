@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/features/parking/presentation/pages/ticket_page.dart';
 
 class HistoryCard extends StatelessWidget {
   const HistoryCard({super.key});
@@ -71,18 +72,21 @@ class HistoryCard extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: const Text(
-              "Lihat",
-              style: TextStyle(
-                fontSize: 12.0,
-                color: AppColors.white,
+          GestureDetector(
+            onTap: () => context.push(const TicketPage()),
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: const Text(
+                "Lihat",
+                style: TextStyle(
+                  fontSize: 12.0,
+                  color: AppColors.white,
+                ),
               ),
             ),
           ),

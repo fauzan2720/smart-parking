@@ -53,7 +53,7 @@ class _EditVehicleState extends State<EditVehicle> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tambah Kendaraan"),
+        title: const Text("Perbarui Kendaraan"),
       ),
       body: Form(
         key: formKey,
@@ -143,7 +143,7 @@ class _EditVehicleState extends State<EditVehicle> {
             ),
             40.0.height,
             SmartFormButton(
-              text: "Tambahkan",
+              text: "Perbarui",
               onPressed: () {
                 if (formKey.currentState!.validate()) {
                   "Berhasil diperbarui".succeedBar(context);

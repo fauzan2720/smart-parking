@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
 import 'package:smart_parking/features/auth/presentation/widgets/divider_text.dart';
+import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -163,11 +164,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 40.0.height,
                 SmartFormButton(
                   text: "Lanjutkan",
-                  onPressed: () {
+                  onPressed: () async {
                     if (formKey.currentState!.validate()) {
-                      context.push(const PinPage(
-                        appBarTitle: "Buat Pin",
-                      ));
+                      final bool pinSuccess =
+                          await context.push<bool>(const PinPage(
+                                appBarTitle: "Buat Pin",
+                                buttonLabel: "Daftar Sekarang",
+                              )) ??
+                              false;
+
+                      if (pinSuccess && context.mounted) {
+                        "Yeay! Register berhasil".succeedBar(context);
+                        context.pushAndRemoveUntil(
+                            const MainPage(), (route) => false);
+                      }
                     }
                   },
                 ),
