@@ -5,12 +5,17 @@ import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 import 'package:smart_parking/features/home/presentation/pages/home_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/history_page.dart';
+import 'package:smart_parking/features/parking/presentation/pages/voucher_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
   PreferredSizeWidget? _handleAppBar(int currentIndex) {
     switch (currentIndex) {
+      case 1:
+        return AppBar(
+          title: const Text("Voucher Tersedia").animate().fadeIn(),
+        );
       case 2:
         return AppBar(
           title: const Text("Riwayat Transaksi").animate().fadeIn(),
@@ -25,7 +30,7 @@ class MainPage extends StatelessWidget {
       case 0:
         return const HomePage();
       case 1:
-        return const Center(child: Text("Voucher"));
+        return const VoucherPage();
       case 2:
         return const HistoryPage();
       default:
