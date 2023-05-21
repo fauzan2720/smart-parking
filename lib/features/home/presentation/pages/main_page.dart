@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 import 'package:smart_parking/features/home/presentation/pages/home_page.dart';
+import 'package:smart_parking/features/parking/presentation/pages/explore_parking_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/history_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/voucher_page.dart';
 
@@ -14,11 +15,15 @@ class MainPage extends StatelessWidget {
     switch (currentIndex) {
       case 1:
         return AppBar(
-          title: const Text("Voucher Tersedia").animate().fadeIn(),
+          title: const Text("Riwayat Transaksi").animate().fadeIn(),
         );
       case 2:
         return AppBar(
-          title: const Text("Riwayat Transaksi").animate().fadeIn(),
+          title: const Text("Voucher Tersedia").animate().fadeIn(),
+        );
+      case 3:
+        return AppBar(
+          title: const Text("Eksplor Parkir").animate().fadeIn(),
         );
       default:
         return null;
@@ -30,9 +35,11 @@ class MainPage extends StatelessWidget {
       case 0:
         return const HomePage();
       case 1:
-        return const VoucherPage();
-      case 2:
         return const HistoryPage();
+      case 2:
+        return const VoucherPage();
+      case 3:
+        return const ExploreParkingPage();
       default:
         return const HomePage();
     }
@@ -49,18 +56,27 @@ class MainPage extends StatelessWidget {
             currentIndex: state,
             onTap: (value) => context.read<PageBloc>().add(value),
             backgroundColor: AppColors.white,
+            type: BottomNavigationBarType.fixed,
             items: const [
               BottomNavigationBarItem(
                 icon: ImageIcon(AppIcons.home),
                 label: 'Beranda',
               ),
               BottomNavigationBarItem(
+                icon: ImageIcon(AppIcons.history),
+                label: 'Riwayat',
+              ),
+              BottomNavigationBarItem(
                 icon: ImageIcon(AppIcons.voucher),
                 label: 'Voucher',
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AppIcons.history),
-                label: 'Riwayat',
+                icon: ImageIcon(AppIcons.search),
+                label: 'Eksplor',
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AppIcons.user),
+                label: 'Saya',
               ),
             ],
           ),

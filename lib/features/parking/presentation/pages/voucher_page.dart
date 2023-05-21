@@ -43,7 +43,7 @@ class _VoucherPageState extends State<VoucherPage> {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(AppSizes.primary),
+      padding: const EdgeInsets.symmetric(horizontal: AppSizes.primary),
       children: [
         TextFormField(
           controller: searchController,
@@ -130,6 +130,7 @@ class _VoucherPageState extends State<VoucherPage> {
             );
           },
         ),
+        30.0.height,
       ],
     );
   }
