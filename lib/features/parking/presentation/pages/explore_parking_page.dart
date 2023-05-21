@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/parking/domain/entities/parking_location_entity.dart';
+import 'package:smart_parking/features/parking/presentation/pages/parking_area_page.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/explore_parking_card.dart';
 
 class ExploreParkingPage extends StatefulWidget {
@@ -91,7 +92,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 borderSide: const BorderSide(
-                  color: Color(0xffC5C5C5),
+                  color: AppColors.border,
                 ),
               ),
             ),
@@ -106,7 +107,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
               ),
               color: AppColors.primary,
               border: Border.all(
-                color: const Color(0xffC5C5C5),
+                color: AppColors.border,
               ),
             ),
             child: const Text(
@@ -123,7 +124,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
                   const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: const Color(0xffC5C5C5),
+                  color: AppColors.border,
                 ),
               ),
               child: Row(
@@ -140,17 +141,16 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
               ),
             ),
           ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: searchResult.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ExploreParkingCard(
-                  parkingLocationEntity: searchResult[index],
-                  onTap: () {
-                    // print("Oke");
-                  },
-                );
-              }),
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: searchResult.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ExploreParkingCard(
+                parkingLocationEntity: searchResult[index],
+                onTap: () => context.push(ParkingAreaPage(searchResult[index])),
+              );
+            },
+          ),
         ],
       ),
     );

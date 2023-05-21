@@ -18,7 +18,7 @@ class ExploreParkingCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
       decoration: BoxDecoration(
         border: Border.all(
-          color: const Color(0xffC5C5C5),
+          color: AppColors.border,
         ),
       ),
       child: Row(
