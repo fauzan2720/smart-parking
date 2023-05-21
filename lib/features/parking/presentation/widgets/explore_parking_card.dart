@@ -49,7 +49,7 @@ class ExploreParkingCard extends StatelessWidget {
             onTap: onTap,
             child: Container(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               decoration: BoxDecoration(
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(5.0),
