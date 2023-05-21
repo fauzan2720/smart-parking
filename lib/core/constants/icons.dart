@@ -17,6 +17,7 @@ class AppIcons {
   static const AssetImage upload = AssetImage("assets/icons/ic_upload.png");
   static const AssetImage user = AssetImage("assets/icons/ic_user.png");
   static const AssetImage voucher = AssetImage("assets/icons/ic_voucher.png");
+  static const AssetImage search = AssetImage("assets/icons/ic_search.png");
 
   static const AssetImage car2 = AssetImage("assets/icons/ic_car2.png");
   static const AssetImage scanQrcode =

@@ -4,14 +4,14 @@ import 'package:smart_parking/features/home/presentation/widgets/button_in_home.
 
 class HeaderInHome extends StatelessWidget {
   final void Function() onTopUpSaldoTap;
-  final void Function() onSearchLocationTap;
+  final void Function() onParkingTap;
   final void Function() onVehicleTap;
   final void Function() onPayTap;
 
   const HeaderInHome({
     super.key,
     required this.onTopUpSaldoTap,
-    required this.onSearchLocationTap,
+    required this.onParkingTap,
     required this.onVehicleTap,
     required this.onPayTap,
   });
@@ -74,9 +74,9 @@ class HeaderInHome extends StatelessWidget {
                 onPressed: onTopUpSaldoTap,
               ),
               ButtonInHome(
-                label: 'Eksplor',
+                label: 'Parkir',
                 icon: AppIcons.parking,
-                onPressed: onSearchLocationTap,
+                onPressed: onParkingTap,
               ),
               ButtonInHome(
                 label: 'Kendaraan',
