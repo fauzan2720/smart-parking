@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/core/extensions/date_time_ext.dart';
 import 'package:smart_parking/features/parking/domain/entities/voucher_entity.dart';
 
 class VoucherCard extends StatelessWidget {
@@ -38,7 +39,7 @@ class VoucherCard extends StatelessWidget {
                 ),
                 5.0.height,
                 Text(
-                  "Berakhir pada ${voucherEntity.deadline}",
+                  "Berakhir pada ${voucherEntity.deadline.toFormattedStringWithTime()}",
                   style: const TextStyle(
                     fontSize: 12.0,
                   ),

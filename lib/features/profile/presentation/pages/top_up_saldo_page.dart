@@ -61,6 +61,8 @@ class TopUpSaldoPage extends StatelessWidget {
       ),
     ];
 
+    saldoHistories.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Isi Saldo"),

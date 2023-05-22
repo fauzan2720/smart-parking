@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/core/extensions/date_time_ext.dart';
 
 class ParkingInOutWidget extends StatelessWidget {
   final void Function()? onScanOutTap;
@@ -28,17 +29,17 @@ class ParkingInOutWidget extends StatelessWidget {
                 ),
               ),
               4.0.height,
-              const Text(
-                "18:48:22",
-                style: TextStyle(
+              Text(
+                DateTime(2023, 5, 15, 10, 30).toFormattedTime(),
+                style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FW.medium,
                 ),
               ),
               4.0.height,
-              const Text(
-                "Jumat, 2021-09-03",
-                style: TextStyle(
+              Text(
+                DateTime(2023, 5, 15, 10, 30).toFormattedString(),
+                style: const TextStyle(
                   fontSize: 12.0,
                 ),
               ),
@@ -69,17 +70,17 @@ class ParkingInOutWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              // const Text(
-              //   "18:08:42",
-              //   style: TextStyle(
+              // Text(
+              //   DateTime(2023, 5, 15, 10, 30).toFormattedTime(),
+              //   style: const TextStyle(
               //     fontSize: 18.0,
               //     fontWeight: FW.medium,
               //   ),
               // ),
               // 4.0.height,
-              // const Text(
-              //   "Jumat, 2021-09-03",
-              //   style: TextStyle(
+              // Text(
+              //   DateTime(2023, 5, 15, 10, 30).toFormattedString(),
+              //   style: const TextStyle(
               //     fontSize: 12.0,
               //   ),
               // ),

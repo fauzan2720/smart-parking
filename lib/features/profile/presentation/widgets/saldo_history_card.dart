@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/core/extensions/date_time_ext.dart';
 import 'package:smart_parking/features/profile/domain/entities/saldo_history_entity.dart';
 
 class SaldoHistoryCard extends StatelessWidget {
@@ -32,7 +33,7 @@ class SaldoHistoryCard extends StatelessWidget {
           ),
           5.0.height,
           Text(
-            "${saldoHistoryEntity.createdAt}",
+            saldoHistoryEntity.createdAt.toFormattedStringWithTime(),
             style: const TextStyle(
               fontSize: 12.0,
             ),
