@@ -4,6 +4,7 @@ import 'package:smart_parking/features/home/presentation/widgets/header_in_home.
 import 'package:smart_parking/features/parking/presentation/pages/parking_now_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
 import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
+import 'package:smart_parking/features/profile/presentation/pages/top_up_saldo_page.dart';
 import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
     return ListView(
       children: [
         HeaderInHome(
-          onTopUpSaldoTap: () {},
+          onTopUpSaldoTap: () => context.push(const TopUpSaldoPage()),
           onParkingTap: () => context.push(const ParkingNowPage()),
           onVehicleTap: () => context.push(const VehiclePage()),
           onPayTap: () => context.push(PayPage(
