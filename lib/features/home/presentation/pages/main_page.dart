@@ -7,6 +7,7 @@ import 'package:smart_parking/features/home/presentation/pages/home_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/explore_parking_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/history_page.dart';
 import 'package:smart_parking/features/parking/presentation/pages/voucher_page.dart';
+import 'package:smart_parking/features/profile/presentation/pages/profile_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -25,6 +26,10 @@ class MainPage extends StatelessWidget {
         return AppBar(
           title: const Text("Eksplor Parkir").animate().fadeIn(),
         );
+      case 4:
+        return AppBar(
+          title: const Text("Profile Saya").animate().fadeIn(),
+        );
       default:
         return null;
     }
@@ -40,6 +45,8 @@ class MainPage extends StatelessWidget {
         return const VoucherPage();
       case 3:
         return const ExploreParkingPage();
+      case 4:
+        return const ProfilePage();
       default:
         return const HomePage();
     }

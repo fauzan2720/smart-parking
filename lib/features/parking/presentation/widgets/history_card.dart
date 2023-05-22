@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_parking/core.dart';
+import 'package:smart_parking/core/extensions/date_time_ext.dart';
 import 'package:smart_parking/features/parking/presentation/pages/ticket_page.dart';
 
 class HistoryCard extends StatelessWidget {
@@ -43,9 +44,10 @@ class HistoryCard extends StatelessWidget {
                         ),
                       ),
                       5.0.height,
-                      const Text(
-                        "2021-09-03",
-                        style: TextStyle(
+                      Text(
+                        DateTime(2023, 5, 15, 10, 30)
+                            .toFormattedStringWithTime(),
+                        style: const TextStyle(
                           fontSize: 12.0,
                         ),
                       ),
