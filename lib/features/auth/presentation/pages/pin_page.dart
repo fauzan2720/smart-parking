@@ -21,7 +21,7 @@ class _PinPageState extends State<PinPage> {
 
   @override
   void dispose() {
-    pinController.clear();
+    pinController.dispose();
     super.dispose();
   }
 
@@ -33,26 +33,23 @@ class _PinPageState extends State<PinPage> {
       ),
       body: Form(
         key: formKey,
-        child: Padding(
+        child: ListView(
           padding: const EdgeInsets.symmetric(
               horizontal: AppSizes.primary, vertical: 30.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SmartFormInputPIN(
-                controller: pinController,
-              ),
-              25.0.height,
-              SmartFormButton(
-                text: widget.buttonLabel,
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    context.pop(true);
-                  }
-                },
-              ),
-            ],
-          ),
+          children: [
+            SmartFormInputPIN(
+              controller: pinController,
+            ),
+            25.0.height,
+            SmartFormButton(
+              text: widget.buttonLabel,
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  context.pop(true);
+                }
+              },
+            ),
+          ],
         ),
       ),
     );

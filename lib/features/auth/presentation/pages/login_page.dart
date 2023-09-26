@@ -18,8 +18,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void dispose() {
-    phoneController.clear();
-    passwordController.clear();
+    phoneController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
@@ -36,7 +36,11 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 50.0.height,
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? 50.0
+                          : context.fullWidth / 3),
                   child: Image.asset(AppImages.logo),
                 ),
                 40.0.height,

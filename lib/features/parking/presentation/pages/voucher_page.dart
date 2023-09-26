@@ -36,7 +36,7 @@ class _VoucherPageState extends State<VoucherPage> {
 
   @override
   void dispose() {
-    searchController.clear();
+    searchController.dispose();
     super.dispose();
   }
 

@@ -24,7 +24,10 @@ class QrCodePage extends StatelessWidget {
               child: QrImage(
                 data: data,
                 version: QrVersions.auto,
-                size: context.fullWidth / 1.2,
+                size:
+                    MediaQuery.of(context).orientation == Orientation.landscape
+                        ? context.fullHeight / 2
+                        : context.fullWidth / 1.2,
               ),
             ),
           ],

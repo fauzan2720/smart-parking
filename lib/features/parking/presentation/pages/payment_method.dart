@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_parking/core.dart';
 import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
-import 'package:smart_parking/features/home/presentation/bloc/page_bloc.dart';
 
 class PaymentMethod extends StatefulWidget {
   const PaymentMethod({super.key});
@@ -18,8 +16,8 @@ class _PaymentMethodState extends State<PaymentMethod> {
 
   @override
   void dispose() {
-    phoneController.clear();
-    pinController.clear();
+    phoneController.dispose();
+    pinController.dispose();
     super.dispose();
   }
 
@@ -111,7 +109,6 @@ class _PaymentMethodState extends State<PaymentMethod> {
 
                   if (pinSuccess && context.mounted) {
                     context.popToRoot();
-                    context.read<PageBloc>().add(2);
                   }
                 }
               },
