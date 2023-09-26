@@ -10,16 +10,21 @@ class ParkingNowPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Tunjukkan QR Code di Pintu Masuk"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            30.0.height,
-            QrImage(
-              data: "data",
-              version: QrVersions.auto,
-              size: context.fullWidth / 1.2,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              30.0.height,
+              QrImage(
+                data: "data",
+                version: QrVersions.auto,
+                size: MediaQuery.of(context).orientation ==
+                        Orientation.landscape
+                    ? context.fullWidth / 3
+                    : context.fullWidth / 1.2,
+              ),
+            ],
+          ),
         ),
       ),
     );

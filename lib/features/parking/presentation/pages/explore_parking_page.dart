@@ -50,7 +50,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
 
   @override
   void dispose() {
-    searchController.clear();
+    searchController.dispose();
     super.dispose();
   }
 

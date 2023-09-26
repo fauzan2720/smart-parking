@@ -22,12 +22,12 @@ class _AddVehicleState extends State<AddVehicle> {
 
   @override
   void dispose() {
-    nameController.clear();
-    platController.clear();
-    stnkImageController.clear();
-    frontVehicleImageController.clear();
-    backVehicleImageController.clear();
-    userWithVehicleImageController.clear();
+    nameController.dispose();
+    platController.dispose();
+    stnkImageController.dispose();
+    frontVehicleImageController.dispose();
+    backVehicleImageController.dispose();
+    userWithVehicleImageController.dispose();
     super.dispose();
   }
 

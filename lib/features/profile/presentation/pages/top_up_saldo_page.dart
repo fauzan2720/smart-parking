@@ -85,7 +85,9 @@ class TopUpSaldoPage extends StatelessWidget {
             child: QrImage(
               data: "data",
               version: QrVersions.auto,
-              size: context.fullWidth / 1.8,
+              size: MediaQuery.of(context).orientation == Orientation.landscape
+                  ? context.fullWidth / 3
+                  : context.fullWidth / 1.8,
             ),
           ),
           40.0.height,

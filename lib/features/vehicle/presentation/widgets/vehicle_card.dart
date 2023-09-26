@@ -40,11 +40,15 @@ class VehicleCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(vehicleEntity.plate),
-              Text(
-                vehicleEntity.name,
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FW.medium,
+              SizedBox(
+                width: context.fullWidth - 195,
+                child: Text(
+                  vehicleEntity.name,
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FW.medium,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
