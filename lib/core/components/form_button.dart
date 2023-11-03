@@ -1,13 +1,18 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
+import 'package:smart_parking/core/extensions/extensions.dart';
 
-class SmartFormOutlinedButton extends StatelessWidget {
+import '../constants/constants.dart';
+
+class SmartFormButton extends StatelessWidget {
   final String text;
   final void Function() onPressed;
+  final Color backgroundColor;
 
-  const SmartFormOutlinedButton({
+  const SmartFormButton({
     super.key,
     required this.text,
     required this.onPressed,
+    this.backgroundColor = AppColors.primary,
   });
 
   @override
@@ -15,15 +20,12 @@ class SmartFormOutlinedButton extends StatelessWidget {
     return SizedBox(
       width: context.fullWidth,
       height: 45.0,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSizes.radius),
           ),
-          side: const BorderSide(
-            color: AppColors.primary,
-          ),
-          backgroundColor: Colors.transparent,
+          backgroundColor: backgroundColor,
         ),
         onPressed: onPressed,
         child: Text(
@@ -31,7 +33,7 @@ class SmartFormOutlinedButton extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FW.medium,
-            color: AppColors.primary,
+            color: AppColors.white,
           ),
         ),
       ),

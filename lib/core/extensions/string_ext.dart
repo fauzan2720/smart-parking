@@ -1,4 +1,6 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
+
+import '../constants/colors.dart';
 
 extension DialogExt on String {
   void succeedBar(BuildContext context) {
