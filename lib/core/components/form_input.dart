@@ -1,4 +1,6 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
+
+import '../constants/constants.dart';
 
 class SmartFormInput extends StatelessWidget {
   final String hint;

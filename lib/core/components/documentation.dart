@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import 'package:smart_parking/core/extensions/extensions.dart';
+
+import '../constants/constants.dart';
+import 'components.dart';
 
 class WidgetsDocumentation extends StatelessWidget {
   const WidgetsDocumentation({super.key});

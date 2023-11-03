@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
 
 extension DoubleExt on double {
   SizedBox get width => SizedBox(width: this);

@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
 
 extension BuildContextExt on BuildContext {
   double get fullHeight => MediaQuery.of(this).size.height;

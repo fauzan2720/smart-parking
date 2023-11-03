@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:intl/intl.dart';
 
 extension StringExt on int {
   String get currencyFormatRp => NumberFormat.currency(

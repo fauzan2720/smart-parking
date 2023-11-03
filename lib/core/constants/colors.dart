@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color primary = Color(0xff4244E5);

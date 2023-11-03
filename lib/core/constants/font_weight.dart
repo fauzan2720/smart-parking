@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
 
 class FW {
   static const FontWeight thin = FontWeight.w100;

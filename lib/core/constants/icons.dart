@@ -1,4 +1,4 @@
-part of 'package:smart_parking/core.dart';
+import 'package:flutter/material.dart';
 
 class AppIcons {
   static const AssetImage camera = AssetImage("assets/icons/ic_camera.png");
