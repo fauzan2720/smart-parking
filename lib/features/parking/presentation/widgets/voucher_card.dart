@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/core/extensions/date_time_ext.dart';
-import 'package:smart_parking/features/parking/domain/entities/voucher_entity.dart';
+import '../../../../core.dart';
+import '../../domain/entities/voucher_entity.dart';
 
 class VoucherCard extends StatelessWidget {
   final VoucherEntity voucherEntity;
@@ -39,7 +38,7 @@ class VoucherCard extends StatelessWidget {
                 ),
                 5.0.height,
                 Text(
-                  "Berakhir pada ${voucherEntity.deadline.toFormattedStringWithTime()}",
+                  'Berakhir pada ${voucherEntity.deadline.toFormattedStringWithTime()}',
                   style: const TextStyle(
                     fontSize: 12.0,
                   ),
@@ -64,7 +63,7 @@ class VoucherCard extends StatelessWidget {
                   border: isClaim ? Border.all(color: AppColors.border) : null,
                 ),
                 child: Text(
-                  isClaim ? "Pakai" : "Klaim",
+                  isClaim ? 'Pakai' : 'Klaim',
                   style: TextStyle(
                     fontSize: 12.0,
                     color: isClaim ? AppColors.black : AppColors.white,

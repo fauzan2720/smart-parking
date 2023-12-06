@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/core/extensions/date_time_ext.dart';
+import '../../../../core.dart';
 
 class ParkingInOutWidget extends StatelessWidget {
   final void Function()? onScanOutTap;
@@ -22,7 +21,7 @@ class ParkingInOutWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Masuk",
+                'Masuk',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: AppColors.grey,
@@ -52,7 +51,7 @@ class ParkingInOutWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Keluar",
+                'Keluar',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: AppColors.grey,
@@ -62,7 +61,7 @@ class ParkingInOutWidget extends StatelessWidget {
               InkWell(
                 onTap: onScanOutTap,
                 child: const Text(
-                  "Silahkan scan",
+                  'Silahkan scan',
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FW.medium,

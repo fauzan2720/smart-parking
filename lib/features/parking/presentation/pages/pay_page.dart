@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:smart_parking/core.dart';
+import '../../../../core.dart';
 
 class PayPage extends StatelessWidget {
   final void Function(String value) onDetect;
@@ -22,7 +22,7 @@ class PayPage extends StatelessWidget {
                   height: 150.0,
                   child: const Center(
                     child: Text(
-                      "Arahkan scanner qr ke kode barcode\nyang sudah disediakan",
+                      'Arahkan scanner qr ke kode barcode\nyang sudah disediakan',
                       style: TextStyle(
                         fontSize: 18.0,
                       ),
@@ -73,7 +73,7 @@ class PayPage extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Arahkan scanner qr ke kode barcode\nyang sudah disediakan",
+                  'Arahkan scanner qr ke kode barcode\nyang sudah disediakan',
                   style: TextStyle(
                     fontSize: 18.0,
                   ),

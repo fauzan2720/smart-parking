@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core/extensions/extensions.dart';
 
 import '../constants/constants.dart';
+import '../extensions/extensions.dart';
 
 class SmartFormOutlinedButton extends StatelessWidget {
   final String text;

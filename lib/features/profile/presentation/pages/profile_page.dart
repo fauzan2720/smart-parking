@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/splash_page.dart';
+import '../../../../core.dart';
+import '../../../auth/presentation/pages/splash_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -26,7 +26,7 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    "Fauzan Abdillah",
+                    'Fauzan Abdillah',
                     style: TextStyle(
                       fontSize: 22.0,
                       fontWeight: FW.bold,
@@ -37,7 +37,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   5.0.height,
                   const Text(
-                    "fauzan.abdillah2705@gmail.com",
+                    'fauzan.abdillah2705@gmail.com',
                     textAlign: TextAlign.center,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -49,7 +49,7 @@ class ProfilePage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50.0),
                 child: Image.network(
-                  "https://ui-avatars.com/api/?name=Fauzan Abdillah",
+                  'https://ui-avatars.com/api/?name=Fauzan Abdillah',
                   height: 100.0,
                   width: 100.0,
                   fit: BoxFit.cover,
@@ -60,7 +60,7 @@ class ProfilePage extends StatelessWidget {
         ),
         const Spacer(),
         SmartFormButton(
-          text: "Logout",
+          text: 'Logout',
           onPressed: () =>
               context.pushAndRemoveUntil(const SplashPage(), (route) => false),
           backgroundColor: AppColors.red,

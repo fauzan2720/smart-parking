@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/vehicle/domain/entities/vehicle_entity.dart';
-import 'package:smart_parking/features/vehicle/presentation/pages/add_vehicle.dart';
-import 'package:smart_parking/features/vehicle/presentation/pages/edit_vehicle.dart';
-import 'package:smart_parking/features/vehicle/presentation/widgets/vehicle_card.dart';
+
+import '../../../../core.dart';
+import '../../domain/entities/vehicle_entity.dart';
+import '../widgets/vehicle_card.dart';
+import 'add_vehicle.dart';
+import 'edit_vehicle.dart';
 
 class VehiclePage extends StatelessWidget {
   const VehiclePage({super.key});
@@ -54,7 +55,7 @@ class VehiclePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kendaraan Anda"),
+        title: const Text('Kendaraan Anda'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.primary),
@@ -74,12 +75,12 @@ class VehiclePage extends StatelessWidget {
                     vehicleEntity: vehicles[index],
                   ),
                 ),
-                onDeleteTap: () => "Berhasil dihapus".succeedBar(context),
+                onDeleteTap: () => 'Berhasil dihapus'.succeedBar(context),
               ),
             ),
             25.0.height,
             SmartFormButton(
-              text: "Tambah Kendaraan",
+              text: 'Tambah Kendaraan',
               onPressed: () => context.push(const AddVehicle()),
             ),
             30.0.height,

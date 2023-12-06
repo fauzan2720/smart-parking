@@ -26,11 +26,11 @@ class SmartFormInputPIN extends StatelessWidget {
         }
       },
       obscureText: true,
-      obscuringCharacter: "*",
+      obscuringCharacter: '*',
       maxLength: 6,
       decoration: InputDecoration(
-        counterText: "",
-        hintText: "Masukkan PIN",
+        counterText: '',
+        hintText: 'Masukkan PIN',
         hintStyle: TextStyle(
           color: AppColors.grey.withOpacity(0.5),
         ),

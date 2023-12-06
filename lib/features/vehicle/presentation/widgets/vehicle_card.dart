@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/vehicle/domain/entities/vehicle_entity.dart';
+import '../../../../core.dart';
+import '../../domain/entities/vehicle_entity.dart';
 
 class VehicleCard extends StatelessWidget {
   final VehicleEntity vehicleEntity;

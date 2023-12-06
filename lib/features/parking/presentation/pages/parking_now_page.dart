@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import '../../../../core.dart';
 
 class ParkingNowPage extends StatelessWidget {
   const ParkingNowPage({super.key});
@@ -8,7 +9,7 @@ class ParkingNowPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tunjukkan QR Code di Pintu Masuk"),
+        title: const Text('Tunjukkan QR Code di Pintu Masuk'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -16,7 +17,7 @@ class ParkingNowPage extends StatelessWidget {
             children: [
               30.0.height,
               QrImage(
-                data: "data",
+                data: 'data',
                 version: QrVersions.auto,
                 size: MediaQuery.of(context).orientation ==
                         Orientation.landscape

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/domain/entities/parking_location_entity.dart';
+import '../../../../core.dart';
+import '../../domain/entities/parking_location_entity.dart';
 
 class ExploreParkingCard extends StatelessWidget {
   final ParkingLocationEntity parkingLocationEntity;
@@ -55,7 +55,7 @@ class ExploreParkingCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5.0),
               ),
               child: const Text(
-                "Lihat Lokasi",
+                'Lihat Lokasi',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: AppColors.white,

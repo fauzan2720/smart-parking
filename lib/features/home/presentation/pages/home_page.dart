@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/home/presentation/widgets/header_in_home.dart';
-import 'package:smart_parking/features/parking/presentation/pages/parking_now_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
-import 'package:smart_parking/features/profile/presentation/pages/top_up_saldo_page.dart';
-import 'package:smart_parking/features/vehicle/presentation/pages/vehicle_page.dart';
+
+import '../../../../core.dart';
+import '../../../parking/presentation/pages/parking_now_page.dart';
+import '../../../parking/presentation/pages/pay_page.dart';
+import '../../../parking/presentation/widgets/history_card.dart';
+import '../../../profile/presentation/pages/top_up_saldo_page.dart';
+import '../../../vehicle/presentation/pages/vehicle_page.dart';
+import '../widgets/header_in_home.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,14 +40,14 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Promo 12.12",
+                'Promo 12.12',
                 style: TextStyle(
                   fontWeight: FW.medium,
                 ),
               ),
               10.0.height,
               const Text(
-                "Parkir pada tanggal 12 bulan 12 diskon 50% berlaku di Mall Lippo Plaza Jember",
+                'Parkir pada tanggal 12 bulan 12 diskon 50% berlaku di Mall Lippo Plaza Jember',
                 style: TextStyle(
                   fontSize: 11.0,
                 ),
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "*syarat dan ketentuan berlaku",
+                    '*syarat dan ketentuan berlaku',
                     style: TextStyle(
                       fontSize: 11.0,
                       color: AppColors.grey,
@@ -73,7 +74,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {},
                       child: const Center(
                         child: Text(
-                          "Klaim",
+                          'Klaim',
                           style: TextStyle(
                             color: AppColors.white,
                           ),
@@ -90,7 +91,7 @@ class HomePage extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: AppSizes.primary),
           child: Text(
-            "Anda sekarang sedang parkir",
+            'Anda sekarang sedang parkir',
             style: TextStyle(
               fontWeight: FW.semibold,
               fontSize: 16.0,

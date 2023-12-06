@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/vehicle/domain/entities/vehicle_entity.dart';
+import '../../../../core.dart';
+import '../../domain/entities/vehicle_entity.dart';
 
 class EditVehicle extends StatefulWidget {
   final VehicleEntity vehicleEntity;
@@ -53,7 +53,7 @@ class _EditVehicleState extends State<EditVehicle> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Perbarui Kendaraan"),
+        title: const Text('Perbarui Kendaraan'),
       ),
       body: Form(
         key: formKey,
@@ -63,11 +63,11 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormInput(
               controller: nameController,
-              hint: "Nama Kendaraan",
+              hint: 'Nama Kendaraan',
               icon: AppIcons.car,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Nama kendaraan wajib diisi";
+                  return 'Nama kendaraan wajib diisi';
                 } else {
                   return null;
                 }
@@ -76,14 +76,14 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormInput(
               controller: platController,
-              hint: "Nomor Plat",
+              hint: 'Nomor Plat',
               icon: AppIcons.plat,
-              helperText: "Contoh: P 1234 AB",
+              helperText: 'Contoh: P 1234 AB',
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Nomor plat wajib diisi";
+                  return 'Nomor plat wajib diisi';
                 } else if (value.isValidLicensePlate()) {
-                  return "Nomor plat tidak valid. Contoh: P 1234 AB";
+                  return 'Nomor plat tidak valid. Contoh: P 1234 AB';
                 } else {
                   return null;
                 }
@@ -92,11 +92,11 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormUpload(
               controller: stnkImageController,
-              hint: "Foto STNK",
+              hint: 'Foto STNK',
               icon: AppIcons.camera,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Gambar wajib diupload";
+                  return 'Gambar wajib diupload';
                 } else {
                   return null;
                 }
@@ -105,11 +105,11 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormUpload(
               controller: frontVehicleImageController,
-              hint: "Foto Kendaraan Tampak Depan",
+              hint: 'Foto Kendaraan Tampak Depan',
               icon: AppIcons.car,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Gambar wajib diupload";
+                  return 'Gambar wajib diupload';
                 } else {
                   return null;
                 }
@@ -118,11 +118,11 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormUpload(
               controller: backVehicleImageController,
-              hint: "Foto Kendaraan Tampak Belakang",
+              hint: 'Foto Kendaraan Tampak Belakang',
               icon: AppIcons.car,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Gambar wajib diupload";
+                  return 'Gambar wajib diupload';
                 } else {
                   return null;
                 }
@@ -131,11 +131,11 @@ class _EditVehicleState extends State<EditVehicle> {
             20.0.height,
             SmartFormUpload(
               controller: userWithVehicleImageController,
-              hint: "Foto Kendaraan Dengan Pemilik",
+              hint: 'Foto Kendaraan Dengan Pemilik',
               icon: AppIcons.car,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Gambar wajib diupload";
+                  return 'Gambar wajib diupload';
                 } else {
                   return null;
                 }
@@ -143,10 +143,10 @@ class _EditVehicleState extends State<EditVehicle> {
             ),
             40.0.height,
             SmartFormButton(
-              text: "Perbarui",
+              text: 'Perbarui',
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  "Berhasil diperbarui".succeedBar(context);
+                  'Berhasil diperbarui'.succeedBar(context);
                   context.pop();
                 }
               },

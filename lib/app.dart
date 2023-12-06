@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/splash_page.dart';
+import 'core.dart';
+import 'features/auth/presentation/pages/splash_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import '../../../../core.dart';
 
 class DividerText extends StatelessWidget {
   final String text;

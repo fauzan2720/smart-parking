@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/domain/entities/voucher_entity.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/voucher_card.dart';
+import '../../../../core.dart';
+import '../../domain/entities/voucher_entity.dart';
+import '../widgets/voucher_card.dart';
 
 class VoucherPage extends StatefulWidget {
   const VoucherPage({super.key});
@@ -14,14 +14,14 @@ class _VoucherPageState extends State<VoucherPage> {
   final TextEditingController searchController = TextEditingController();
   final List<VoucherEntity> vouchers = [
     VoucherEntity(
-      name: "Diskon 10% Pembayaran OvoPay",
-      code: "ABCDEF",
+      name: 'Diskon 10% Pembayaran OvoPay',
+      code: 'ABCDEF',
       deadline: DateTime(2023, 08, 29, 23, 59),
       discount: 10 / 100,
     ),
     VoucherEntity(
-      name: "Diskon 10% Pembayaran OvoPay",
-      code: "12345",
+      name: 'Diskon 10% Pembayaran OvoPay',
+      code: '12345',
       deadline: DateTime(2023, 08, 29, 23, 59),
       discount: 10 / 100,
     ),
@@ -62,7 +62,7 @@ class _VoucherPageState extends State<VoucherPage> {
             contentPadding: const EdgeInsets.all(14.0),
             filled: true,
             fillColor: Colors.white,
-            hintText: "Masukkan kode voucher",
+            hintText: 'Masukkan kode voucher',
             hintStyle: TextStyle(
               color: AppColors.grey.withOpacity(0.5),
             ),
@@ -90,7 +90,7 @@ class _VoucherPageState extends State<VoucherPage> {
             ),
           ),
           child: const Text(
-            "Voucher saat ini",
+            'Voucher saat ini',
             style: TextStyle(
               fontWeight: FW.medium,
               color: AppColors.white,
@@ -114,7 +114,7 @@ class _VoucherPageState extends State<VoucherPage> {
                 ),
                 10.0.width,
                 const Flexible(
-                  child: Text("Voucher tidak ditemukan"),
+                  child: Text('Voucher tidak ditemukan'),
                 ),
               ],
             ),

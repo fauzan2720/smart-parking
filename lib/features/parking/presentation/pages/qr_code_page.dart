@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import '../../../../core.dart';
 
 class QrCodePage extends StatelessWidget {
   final String data;
@@ -13,7 +14,7 @@ class QrCodePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("QR Code"),
+        title: const Text('QR Code'),
       ),
       body: Center(
         child: Column(

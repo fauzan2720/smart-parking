@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/domain/entities/parking_location_entity.dart';
-import 'package:smart_parking/features/parking/presentation/pages/parking_area_page.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/explore_parking_card.dart';
+
+import '../../../../core.dart';
+import '../../domain/entities/parking_location_entity.dart';
+import '../widgets/explore_parking_card.dart';
+import 'parking_area_page.dart';
 
 class ExploreParkingPage extends StatefulWidget {
   const ExploreParkingPage({super.key});
@@ -15,29 +16,29 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
   final TextEditingController searchController = TextEditingController();
   final List<ParkingLocationEntity> parkingLocations = [
     ParkingLocationEntity(
-      name: "Lippo Plaza Jember",
+      name: 'Lippo Plaza Jember',
       address:
-          "Alamat: Jl. Gajah Mada No.106, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131",
+          'Alamat: Jl. Gajah Mada No.106, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131',
     ),
     ParkingLocationEntity(
-      name: "Jember Roxy Square",
+      name: 'Jember Roxy Square',
       address:
-          "Jl. Hayam Wuruk No.50-58, Gerdu, Sempusari, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131",
+          'Jl. Hayam Wuruk No.50-58, Gerdu, Sempusari, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131',
     ),
     ParkingLocationEntity(
-      name: "Matahari Johar Plaza",
+      name: 'Matahari Johar Plaza',
       address:
-          "Johar Plaza, Jl. Diponegoro No.66, Tembaan, Kepatihan, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68137",
+          'Johar Plaza, Jl. Diponegoro No.66, Tembaan, Kepatihan, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68137',
     ),
     ParkingLocationEntity(
-      name: "Rien Collection",
+      name: 'Rien Collection',
       address:
-          "Jl. Sultan Agung No.9 No.1, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131",
+          'Jl. Sultan Agung No.9 No.1, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131',
     ),
     ParkingLocationEntity(
-      name: "Kota Cinema Mall Jember",
+      name: 'Kota Cinema Mall Jember',
       address:
-          "Jl. Gajah Mada No.176, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131",
+          'Jl. Gajah Mada No.176, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131',
     ),
   ];
   List<ParkingLocationEntity> searchResult = [];
@@ -78,7 +79,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
             contentPadding: const EdgeInsets.all(14.0),
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari lokasi parkir",
+            hintText: 'Cari lokasi parkir',
             hintStyle: TextStyle(
               color: AppColors.grey.withOpacity(0.5),
             ),
@@ -106,7 +107,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
             ),
           ),
           child: const Text(
-            "Lokasi Parkir",
+            'Lokasi Parkir',
             style: TextStyle(
               fontWeight: FW.medium,
               color: AppColors.white,
@@ -130,7 +131,7 @@ class _ExploreParkingPageState extends State<ExploreParkingPage> {
                 ),
                 10.0.width,
                 const Flexible(
-                  child: Text("Lokasi parkir tidak ditemukan"),
+                  child: Text('Lokasi parkir tidak ditemukan'),
                 ),
               ],
             ),

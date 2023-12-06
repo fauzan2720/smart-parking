@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core/extensions/extensions.dart';
 
 import '../constants/constants.dart';
+import '../extensions/extensions.dart';
 import 'components.dart';
 
 class WidgetsDocumentation extends StatelessWidget {
@@ -16,12 +16,12 @@ class WidgetsDocumentation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SmartFormInput(
-              hint: "Username",
+              hint: 'Username',
               icon: AppIcons.user,
             ),
             20.0.height,
             const SmartFormInput(
-              hint: "Password",
+              hint: 'Password',
               icon: AppIcons.password,
               isPassword: true,
             ),
@@ -29,12 +29,12 @@ class WidgetsDocumentation extends StatelessWidget {
             const SmartFormInputPIN(),
             40.0.height,
             SmartFormButton(
-              text: "Mulai",
+              text: 'Mulai',
               onPressed: () {},
             ),
             20.0.height,
             SmartFormOutlinedButton(
-              text: "Mulai",
+              text: 'Mulai',
               onPressed: () {},
             ),
           ],

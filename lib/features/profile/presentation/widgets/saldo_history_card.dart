@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/core/extensions/date_time_ext.dart';
-import 'package:smart_parking/features/profile/domain/entities/saldo_history_entity.dart';
+import '../../../../core.dart';
+import '../../domain/entities/saldo_history_entity.dart';
 
 class SaldoHistoryCard extends StatelessWidget {
   final SaldoHistoryEntity saldoHistoryEntity;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/core/extensions/date_time_ext.dart';
-import 'package:smart_parking/features/parking/presentation/pages/ticket_page.dart';
+import '../../../../core.dart';
+import '../pages/ticket_page.dart';
 
 class HistoryCard extends StatelessWidget {
   const HistoryCard({super.key});
@@ -26,7 +25,7 @@ class HistoryCard extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(AppSizes.card),
                     child: Image.network(
-                      "https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/bolasport/medium_d96dba2be873937c97a40ab362f0a28b.jpg",
+                      'https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/bolasport/medium_d96dba2be873937c97a40ab362f0a28b.jpg',
                       width: 50.0,
                       height: 50.0,
                       fit: BoxFit.cover,
@@ -37,7 +36,7 @@ class HistoryCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Lippo Plaza Jember",
+                        'Lippo Plaza Jember',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FW.medium,
@@ -64,7 +63,7 @@ class HistoryCard extends StatelessWidget {
                   color: AppColors.red,
                 ),
                 child: const Text(
-                  "Belum Bayar",
+                  'Belum Bayar',
                   style: TextStyle(
                     fontSize: 12.0,
                     color: AppColors.white,
@@ -84,7 +83,7 @@ class HistoryCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5.0),
               ),
               child: const Text(
-                "Lihat",
+                'Lihat',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: AppColors.white,
