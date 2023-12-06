@@ -42,3 +42,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Genedated bolierplate codes
+*.g.dart
+*.freezed.dart
+*.chopper.dart
+*.gen.dart
+lib/generated_plugin_registrant.dart
