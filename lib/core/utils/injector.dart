@@ -1,7 +1,12 @@
 import 'package:get_it/get_it.dart';
 
-final locator = GetIt.instance;
+import '../../features/auth/auth.dart';
+import '../db/user_secure_db.dart';
+
+final GetIt locator = GetIt.instance;
 
 void init() {
-  // locator.registerFactory(() => PageBloc());
+  Auth.injection();
+
+  locator.registerLazySingleton(() => UserSecureDb());
 }

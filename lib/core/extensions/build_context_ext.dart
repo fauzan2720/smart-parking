@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 extension BuildContextExt on BuildContext {
   double get fullHeight => MediaQuery.of(this).size.height;
 
   double get fullWidth => MediaQuery.of(this).size.width;
+
+  /// Show a loading dialog with text [message]
+  Future showLoadingDialog({String? message}) {
+    return EasyLoading.show(
+      maskType: EasyLoadingMaskType.black,
+      status: message ?? 'Loading...',
+      dismissOnTap: false,
+    );
+  }
+
+  /// Dismiss current showed loading dialog
+  Future dismissLoadingDialog() => EasyLoading.dismiss();
 }
 
 extension NavigatorExt on BuildContext {

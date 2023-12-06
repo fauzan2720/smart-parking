@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core.dart';
 import '../../../home/presentation/pages/main_page.dart';
+import '../managers/managers.dart';
 import '../widgets/divider_text.dart';
 import 'register_page.dart';
 
@@ -77,15 +79,36 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 40.0.height,
-                SmartFormButton(
-                  text: 'Masuk',
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {
-                      'Yeay! Login berhasil'.succeedBar(context);
-                      context.pushAndRemoveUntil(
-                          const MainPage(), (route) => false);
-                    }
+                BlocListener<AuthBloc, AuthState>(
+                  listener: (context, state) {
+                    state.maybeWhen(
+                      orElse: () {},
+                      loading: () {
+                        context.showLoadingDialog();
+                      },
+                      success: (data) {
+                        context.dismissLoadingDialog();
+                        'Yeay! Login berhasil'.succeedBar(context);
+                        context.pushAndRemoveUntil(
+                            const MainPage(), (route) => false);
+                      },
+                      error: (state, message) {
+                        context.dismissLoadingDialog();
+                        message.failedBar(context);
+                      },
+                    );
                   },
+                  child: SmartFormButton(
+                    text: 'Masuk',
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        context.read<AuthBloc>().add(AuthEvent.login(
+                              phoneNumber: phoneController.text,
+                              password: passwordController.text,
+                            ));
+                      }
+                    },
+                  ),
                 ),
                 30.0.height,
                 const DividerText(text: 'atau'),
