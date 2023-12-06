@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'core.dart';
-import 'features/auth/presentation/pages/splash_page.dart';
+import 'features/auth/auth.dart';
+import 'features/auth/presentation/pages/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,7 +11,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: BlocProviders.state,
+      providers: [
+        ...Auth.blocProviders,
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Smart Parking',
@@ -23,7 +27,8 @@ class App extends StatelessWidget {
                 primary: AppColors.primary,
               ),
         ),
-        home: const SplashPage(),
+        builder: EasyLoading.init(),
+        home: const SplashScreen(),
       ),
     );
   }
