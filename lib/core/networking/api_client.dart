@@ -1,3 +1,4 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -29,7 +30,7 @@ class ApiClient {
         useToken: useToken,
         customAuthParam: customAuthParam,
       ))
-      // ..interceptors.add(ChuckerDioInterceptor())
+      ..interceptors.add(ChuckerDioInterceptor())
       ..interceptors.add(PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
