@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import '../../../../core.dart';
 
 class ParkingAddressWidget extends StatelessWidget {
   const ParkingAddressWidget({super.key});
@@ -15,7 +15,7 @@ class ParkingAddressWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Alamat Parkir Anda",
+                'Alamat Parkir Anda',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: AppColors.grey,
@@ -23,7 +23,7 @@ class ParkingAddressWidget extends StatelessWidget {
               ),
               4.0.height,
               const Text(
-                "Lippo Plaza Jember",
+                'Lippo Plaza Jember',
                 style: TextStyle(
                   fontSize: 14.0,
                   fontWeight: FW.medium,
@@ -31,7 +31,7 @@ class ParkingAddressWidget extends StatelessWidget {
               ),
               4.0.height,
               const Text(
-                "Jl. Gajah Mada No.106, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131",
+                'Jl. Gajah Mada No.106, Kb. Kidul, Jember Kidul, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68131',
                 style: TextStyle(
                   fontSize: 12.0,
                 ),
@@ -44,7 +44,7 @@ class ParkingAddressWidget extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppSizes.radius),
             child: Image.network(
-              "https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/bolasport/medium_d96dba2be873937c97a40ab362f0a28b.jpg",
+              'https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/bolasport/medium_d96dba2be873937c97a40ab362f0a28b.jpg',
               height: 100.0,
               fit: BoxFit.cover,
             ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/register_page.dart';
-import 'package:smart_parking/features/auth/presentation/widgets/divider_text.dart';
-import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
+
+import '../../../../core.dart';
+import '../../../home/presentation/pages/main_page.dart';
+import '../widgets/divider_text.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -46,14 +47,14 @@ class _LoginPageState extends State<LoginPage> {
                 40.0.height,
                 SmartFormInput(
                   controller: phoneController,
-                  hint: "Nomor Telepon",
+                  hint: 'Nomor Telepon',
                   icon: AppIcons.phone,
                   keyboardType: TextInputType.phone,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Nomor telepon masih kosong";
+                      return 'Nomor telepon masih kosong';
                     } else if (value.isValidPhoneNumber()) {
-                      return "Nomor Telepon tidak valid";
+                      return 'Nomor Telepon tidak valid';
                     } else {
                       return null;
                     }
@@ -62,14 +63,14 @@ class _LoginPageState extends State<LoginPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: passwordController,
-                  hint: "Kata Sandi",
+                  hint: 'Kata Sandi',
                   icon: AppIcons.password,
                   isPassword: true,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Kata sandi masih kosong";
+                      return 'Kata sandi masih kosong';
                     } else if (value.length < 6) {
-                      return "Kata sandi terdiri dari minimal 6 karakter";
+                      return 'Kata sandi terdiri dari minimal 6 karakter';
                     } else {
                       return null;
                     }
@@ -77,20 +78,20 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 40.0.height,
                 SmartFormButton(
-                  text: "Masuk",
+                  text: 'Masuk',
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      "Yeay! Login berhasil".succeedBar(context);
+                      'Yeay! Login berhasil'.succeedBar(context);
                       context.pushAndRemoveUntil(
                           const MainPage(), (route) => false);
                     }
                   },
                 ),
                 30.0.height,
-                const DividerText(text: "atau"),
+                const DividerText(text: 'atau'),
                 30.0.height,
                 SmartFormOutlinedButton(
-                  text: "Buat Akun Baru",
+                  text: 'Buat Akun Baru',
                   onPressed: () => context.push(const RegisterPage()),
                 ),
                 50.0.height,

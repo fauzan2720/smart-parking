@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
+import '../../../../core.dart';
 
 class PinPage extends StatefulWidget {
   final String appBarTitle;
@@ -7,8 +7,8 @@ class PinPage extends StatefulWidget {
 
   const PinPage({
     super.key,
-    this.appBarTitle = "Konfirmasi",
-    this.buttonLabel = "Konfirmasi Sekarang",
+    this.appBarTitle = 'Konfirmasi',
+    this.buttonLabel = 'Konfirmasi Sekarang',
   });
 
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/domain/entities/parking_area.dart';
+import '../../../../core.dart';
+import '../../domain/entities/parking_area.dart';
 
 class ParkingAreaCard extends StatelessWidget {
   final ParkingArea parkingArea;

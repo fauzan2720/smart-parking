@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/history_card.dart';
+import '../../../../core.dart';
+import '../widgets/history_card.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});

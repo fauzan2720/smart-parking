@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/home/presentation/widgets/button_in_home.dart';
+import '../../../../core.dart';
+import 'button_in_home.dart';
 
 class HeaderInHome extends StatelessWidget {
   final void Function() onTopUpSaldoTap;
@@ -42,7 +42,7 @@ class HeaderInHome extends StatelessWidget {
               ),
               const Spacer(),
               const Text(
-                "P 5937 GF",
+                'P 5937 GF',
                 style: TextStyle(
                   color: AppColors.white,
                 ),
@@ -51,7 +51,7 @@ class HeaderInHome extends StatelessWidget {
           ),
           15.0.height,
           const Text(
-            "Haii, Fauzan",
+            'Haii, Fauzan',
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FW.medium,
@@ -59,7 +59,7 @@ class HeaderInHome extends StatelessWidget {
             ),
           ),
           const Text(
-            "Ayo parkir dengan aman!",
+            'Ayo parkir dengan aman!',
             style: TextStyle(
               color: AppColors.white,
             ),

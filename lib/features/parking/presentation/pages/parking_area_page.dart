@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/parking/domain/entities/parking_area.dart';
-import 'package:smart_parking/features/parking/domain/entities/parking_location_entity.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/parking_area_card.dart';
+import '../../../../core.dart';
+import '../../domain/entities/parking_area.dart';
+import '../../domain/entities/parking_location_entity.dart';
+import '../widgets/parking_area_card.dart';
 
 class ParkingAreaPage extends StatelessWidget {
   final ParkingLocationEntity parkingLocationEntity;
@@ -16,62 +16,62 @@ class ParkingAreaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<ParkingArea> parkingAreas = [
       ParkingArea(
-        location: "A-1",
+        location: 'A-1',
         available: false,
       ),
       ParkingArea(
-        location: "A-2",
+        location: 'A-2',
         available: false,
       ),
       ParkingArea(
-        location: "A-3",
+        location: 'A-3',
         available: true,
       ),
       ParkingArea(
-        location: "A-4",
+        location: 'A-4',
         available: false,
       ),
       ParkingArea(
-        location: "A-5",
+        location: 'A-5',
         available: false,
       ),
       ParkingArea(
-        location: "A-6",
+        location: 'A-6',
         available: true,
       ),
       ParkingArea(
-        location: "A-7",
+        location: 'A-7',
         available: false,
       ),
       ParkingArea(
-        location: "A-8",
+        location: 'A-8',
         available: false,
       ),
       ParkingArea(
-        location: "A-9",
+        location: 'A-9',
         available: true,
       ),
       ParkingArea(
-        location: "A-10",
+        location: 'A-10',
         available: false,
       ),
       ParkingArea(
-        location: "A-11",
+        location: 'A-11',
         available: false,
       ),
       ParkingArea(
-        location: "A-12",
+        location: 'A-12',
         available: true,
       ),
       ParkingArea(
-        location: "A-13",
+        location: 'A-13',
         available: false,
       ),
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Area Parkir"),
+        title: const Text('Area Parkir'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSizes.primary),
@@ -105,7 +105,7 @@ class ParkingAreaPage extends StatelessWidget {
                   ),
                   5.0.width,
                   const Text(
-                    "9 terisi",
+                    '9 terisi',
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
@@ -124,7 +124,7 @@ class ParkingAreaPage extends StatelessWidget {
                   ),
                   5.0.width,
                   const Text(
-                    "4 tersedia",
+                    '4 tersedia',
                     style: TextStyle(
                       fontSize: 18.0,
                     ),

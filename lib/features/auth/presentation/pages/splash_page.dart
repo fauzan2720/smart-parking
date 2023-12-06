@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/login_page.dart';
+import '../../../../core.dart';
+import 'login_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
                 Image.asset(AppImages.splash),
                 28.0.height,
                 const Text(
-                  "Solusi Parkir Tanpa Kontak\nFisik Dengan Petugas",
+                  'Solusi Parkir Tanpa Kontak\nFisik Dengan Petugas',
                   style: TextStyle(
                     fontSize: 22.0,
                     fontWeight: FW.medium,
@@ -36,7 +36,7 @@ class SplashPage extends StatelessWidget {
                   Image.asset(AppImages.splash),
                   28.0.width,
                   const Text(
-                    "Solusi Parkir Tanpa Kontak\nFisik Dengan Petugas",
+                    'Solusi Parkir Tanpa Kontak\nFisik Dengan Petugas',
                     style: TextStyle(
                       fontSize: 22.0,
                       fontWeight: FW.medium,
@@ -50,7 +50,7 @@ class SplashPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(
             AppSizes.primary, AppSizes.primary, AppSizes.primary, 50.0),
         child: SmartFormOutlinedButton(
-          text: "Mulai",
+          text: 'Mulai',
           onPressed: () => context.pushReplacement(const LoginPage()),
         ),
       ),

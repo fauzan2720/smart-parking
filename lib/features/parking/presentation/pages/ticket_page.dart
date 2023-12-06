@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/pay_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/payment_method.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/parking_address_widget.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/parking_in_out_widget.dart';
-import 'package:smart_parking/features/parking/presentation/widgets/parking_info_widget.dart';
+
+import '../../../../core.dart';
+import '../../../auth/presentation/pages/pin_page.dart';
+import '../widgets/parking_address_widget.dart';
+import '../widgets/parking_in_out_widget.dart';
+import '../widgets/parking_info_widget.dart';
+import 'pay_page.dart';
+import 'payment_method.dart';
 
 class TicketPage extends StatelessWidget {
   const TicketPage({super.key});
@@ -14,7 +15,7 @@ class TicketPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tiket Parkir"),
+        title: const Text('Tiket Parkir'),
       ),
       body: SingleChildScrollView(
         controller: ScrollController(),
@@ -57,11 +58,11 @@ class TicketPage extends StatelessWidget {
                   10.0.height,
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text("Saldo saat ini ${20000.currencyFormatRp}"),
+                    child: Text('Saldo saat ini ${20000.currencyFormatRp}'),
                   ),
                   4.0.height,
                   SmartFormButton(
-                    text: "Bayar Sekarang | ${5000.currencyFormatRp}",
+                    text: 'Bayar Sekarang | ${5000.currencyFormatRp}',
                     onPressed: () async {
                       final bool pinSuccess =
                           await context.push<bool>(const PinPage()) ?? false;
@@ -73,7 +74,7 @@ class TicketPage extends StatelessWidget {
                   ),
                   10.0.height,
                   SmartFormOutlinedButton(
-                    text: "Metode Pembayaran Lain",
+                    text: 'Metode Pembayaran Lain',
                     onPressed: () => context.push(const PaymentMethod()),
                   ),
                   40.0.height,
@@ -85,14 +86,14 @@ class TicketPage extends StatelessWidget {
                   10.0.height,
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text("Saldo saat ini ${20000.currencyFormatRp}"),
+                    child: Text('Saldo saat ini ${20000.currencyFormatRp}'),
                   ),
                   4.0.height,
                   Row(
                     children: [
                       Flexible(
                         child: SmartFormButton(
-                          text: "Bayar Sekarang | ${5000.currencyFormatRp}",
+                          text: 'Bayar Sekarang | ${5000.currencyFormatRp}',
                           onPressed: () async {
                             final bool pinSuccess =
                                 await context.push<bool>(const PinPage()) ??
@@ -107,7 +108,7 @@ class TicketPage extends StatelessWidget {
                       10.0.width,
                       Flexible(
                         child: SmartFormOutlinedButton(
-                          text: "Metode Pembayaran Lain",
+                          text: 'Metode Pembayaran Lain',
                           onPressed: () => context.push(const PaymentMethod()),
                         ),
                       ),

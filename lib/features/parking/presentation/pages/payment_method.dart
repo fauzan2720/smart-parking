@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
+import '../../../../core.dart';
+import '../../../auth/presentation/pages/pin_page.dart';
 
 class PaymentMethod extends StatefulWidget {
   const PaymentMethod({super.key});
@@ -24,18 +24,18 @@ class _PaymentMethodState extends State<PaymentMethod> {
   @override
   Widget build(BuildContext context) {
     String? selectedOption;
-    final List<String> paymentMethods = ["GoPay", "OvoPay", "Dana"];
+    final List<String> paymentMethods = ['GoPay', 'OvoPay', 'Dana'];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pembayaran"),
+        title: const Text('Pembayaran'),
       ),
       body: Form(
         key: formKey,
         child: ListView(
           padding: const EdgeInsets.all(AppSizes.primary),
           children: [
-            const Text("Pilih Metode Pembayaran Lain"),
+            const Text('Pilih Metode Pembayaran Lain'),
             10.0.height,
             StatefulBuilder(
               builder: (context, changePaymentMethod) {
@@ -70,14 +70,14 @@ class _PaymentMethodState extends State<PaymentMethod> {
             25.0.height,
             SmartFormInput(
               controller: phoneController,
-              hint: "Masukkan Nomor Telepon",
+              hint: 'Masukkan Nomor Telepon',
               icon: AppIcons.phone,
               keyboardType: TextInputType.phone,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "Nomor telepon masih kosong";
+                  return 'Nomor telepon masih kosong';
                 } else if (value.isValidPhoneNumber()) {
-                  return "Nomor Telepon tidak valid";
+                  return 'Nomor Telepon tidak valid';
                 } else {
                   return null;
                 }
@@ -86,7 +86,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
             25.0.height,
             SmartFormInput(
               controller: pinController,
-              hint: "Masukkan Pin",
+              hint: 'Masukkan Pin',
               icon: AppIcons.plat,
               keyboardType: TextInputType.number,
               validator: (value) {
@@ -99,10 +99,10 @@ class _PaymentMethodState extends State<PaymentMethod> {
             ),
             25.0.height,
             SmartFormButton(
-              text: "Bayar Sekarang",
+              text: 'Bayar Sekarang',
               onPressed: () async {
                 if (selectedOption == null) {
-                  "Pilih metode pembayaran".failedBar(context);
+                  'Pilih metode pembayaran'.failedBar(context);
                 } else if (formKey.currentState!.validate()) {
                   final bool pinSuccess =
                       await context.push<bool>(const PinPage()) ?? false;

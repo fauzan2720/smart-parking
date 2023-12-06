@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/auth/presentation/pages/pin_page.dart';
-import 'package:smart_parking/features/auth/presentation/widgets/divider_text.dart';
-import 'package:smart_parking/features/home/presentation/pages/main_page.dart';
+
+import '../../../../core.dart';
+import '../../../home/presentation/pages/main_page.dart';
+import '../widgets/divider_text.dart';
+import 'pin_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -47,7 +48,7 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 70.0.height,
                 const Text(
-                  "Buat Akun Baru",
+                  'Buat Akun Baru',
                   style: TextStyle(
                     color: AppColors.primary,
                     fontWeight: FW.medium,
@@ -57,11 +58,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 30.0.height,
                 SmartFormInput(
                   controller: nameController,
-                  hint: "Nama Lengkap",
+                  hint: 'Nama Lengkap',
                   icon: AppIcons.user,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Nama kamu masih kosong";
+                      return 'Nama kamu masih kosong';
                     } else {
                       return null;
                     }
@@ -70,14 +71,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: emailController,
-                  hint: "Email",
+                  hint: 'Email',
                   icon: AppIcons.email,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Email masih kosong";
+                      return 'Email masih kosong';
                     } else if (value.isValidEmail()) {
-                      return "Email tidak valid";
+                      return 'Email tidak valid';
                     } else {
                       return null;
                     }
@@ -86,14 +87,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: phoneController,
-                  hint: "Nomor Telepon",
+                  hint: 'Nomor Telepon',
                   icon: AppIcons.phone,
                   keyboardType: TextInputType.phone,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Nomor telepon masih kosong";
+                      return 'Nomor telepon masih kosong';
                     } else if (value.isValidPhoneNumber()) {
-                      return "Nomor Telepon tidak valid";
+                      return 'Nomor Telepon tidak valid';
                     } else {
                       return null;
                     }
@@ -102,16 +103,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: passwordController,
-                  hint: "Kata Sandi",
+                  hint: 'Kata Sandi',
                   icon: AppIcons.password,
                   isPassword: true,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Kata sandi masih kosong";
+                      return 'Kata sandi masih kosong';
                     } else if (value.length < 6) {
-                      return "Kata sandi terlalu lemah";
+                      return 'Kata sandi terlalu lemah';
                     } else if (value != passwordConfirmController.text) {
-                      return "Kata sandi tidak sama";
+                      return 'Kata sandi tidak sama';
                     } else {
                       return null;
                     }
@@ -120,14 +121,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: passwordConfirmController,
-                  hint: "Konfirmasi Kata Sandi",
+                  hint: 'Konfirmasi Kata Sandi',
                   icon: AppIcons.password,
                   isPassword: true,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Kata sandi masih kosong";
+                      return 'Kata sandi masih kosong';
                     } else if (value != passwordController.text) {
-                      return "Kata sandi tidak sama";
+                      return 'Kata sandi tidak sama';
                     } else {
                       return null;
                     }
@@ -136,13 +137,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormInput(
                   controller: identityNumberController,
-                  hint: "Nomor Identitas",
+                  hint: 'Nomor Identitas',
                   icon: AppIcons.identity,
                   keyboardType: TextInputType.phone,
-                  helperText: "KTP - Kartu Pelajar - Kartu Mahasiswa",
+                  helperText: 'KTP - Kartu Pelajar - Kartu Mahasiswa',
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Nomor identitas masih kosong";
+                      return 'Nomor identitas masih kosong';
                     } else {
                       return null;
                     }
@@ -151,11 +152,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 20.0.height,
                 SmartFormUpload(
                   controller: identityImageController,
-                  hint: "Upload Identitas",
+                  hint: 'Upload Identitas',
                   icon: AppIcons.identity,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Foto identitas masih kosong";
+                      return 'Foto identitas masih kosong';
                     } else {
                       return null;
                     }
@@ -163,18 +164,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 40.0.height,
                 SmartFormButton(
-                  text: "Lanjutkan",
+                  text: 'Lanjutkan',
                   onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       final bool pinSuccess =
                           await context.push<bool>(const PinPage(
-                                appBarTitle: "Buat Pin",
-                                buttonLabel: "Daftar Sekarang",
+                                appBarTitle: 'Buat Pin',
+                                buttonLabel: 'Daftar Sekarang',
                               )) ??
                               false;
 
                       if (pinSuccess && context.mounted) {
-                        "Yeay! Register berhasil".succeedBar(context);
+                        'Yeay! Register berhasil'.succeedBar(context);
                         context.pushAndRemoveUntil(
                             const MainPage(), (route) => false);
                       }
@@ -182,10 +183,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 30.0.height,
-                const DividerText(text: "atau"),
+                const DividerText(text: 'atau'),
                 30.0.height,
                 SmartFormOutlinedButton(
-                  text: "Masuk",
+                  text: 'Masuk',
                   onPressed: () => context.pop(),
                 ),
                 50.0.height,

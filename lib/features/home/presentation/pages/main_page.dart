@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smart_parking/core.dart';
-import 'package:smart_parking/features/home/presentation/pages/home_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/explore_parking_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/history_page.dart';
-import 'package:smart_parking/features/parking/presentation/pages/voucher_page.dart';
-import 'package:smart_parking/features/profile/presentation/pages/profile_page.dart';
+
+import '../../../../core.dart';
+import '../../../parking/presentation/pages/explore_parking_page.dart';
+import '../../../parking/presentation/pages/history_page.dart';
+import '../../../parking/presentation/pages/voucher_page.dart';
+import '../../../profile/presentation/pages/profile_page.dart';
+import 'home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -20,19 +21,19 @@ class _MainPageState extends State<MainPage> {
     switch (currentIndex) {
       case 1:
         return AppBar(
-          title: const Text("Riwayat Transaksi"),
+          title: const Text('Riwayat Transaksi'),
         );
       case 2:
         return AppBar(
-          title: const Text("Voucher Tersedia"),
+          title: const Text('Voucher Tersedia'),
         );
       case 3:
         return AppBar(
-          title: const Text("Eksplor Parkir"),
+          title: const Text('Eksplor Parkir'),
         );
       case 4:
         return AppBar(
-          title: const Text("Profile Saya"),
+          title: const Text('Profile Saya'),
         );
       default:
         return null;
