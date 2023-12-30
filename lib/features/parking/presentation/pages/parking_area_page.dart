@@ -1,73 +1,26 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/parking_area.dart';
-import '../../domain/entities/parking_location_entity.dart';
+import '../../domain/models/models.dart';
 import '../widgets/parking_area_card.dart';
 
 class ParkingAreaPage extends StatelessWidget {
-  final ParkingLocationEntity parkingLocationEntity;
+  final ExploreParkingModel parkingLocationEntity;
 
-  const ParkingAreaPage(
-    this.parkingLocationEntity, {
+  const ParkingAreaPage({
+    required this.parkingLocationEntity,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    final List<ParkingArea> parkingAreas = [
-      ParkingArea(
-        location: 'A-1',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-2',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-3',
-        available: true,
-      ),
-      ParkingArea(
-        location: 'A-4',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-5',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-6',
-        available: true,
-      ),
-      ParkingArea(
-        location: 'A-7',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-8',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-9',
-        available: true,
-      ),
-      ParkingArea(
-        location: 'A-10',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-11',
-        available: false,
-      ),
-      ParkingArea(
-        location: 'A-12',
-        available: true,
-      ),
-      ParkingArea(
-        location: 'A-13',
-        available: false,
-      ),
-    ];
+    final notavailable = parkingLocationEntity.parkingAreas
+        .where((element) => !element.available)
+        .toList()
+        .length;
+    final available = parkingLocationEntity.parkingAreas
+        .where((element) => element.available)
+        .toList()
+        .length;
 
     return Scaffold(
       appBar: AppBar(
@@ -104,9 +57,9 @@ class ParkingAreaPage extends StatelessWidget {
                     ),
                   ),
                   5.0.width,
-                  const Text(
-                    '9 terisi',
-                    style: TextStyle(
+                  Text(
+                    '$notavailable terisi',
+                    style: const TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
@@ -123,9 +76,9 @@ class ParkingAreaPage extends StatelessWidget {
                     ),
                   ),
                   5.0.width,
-                  const Text(
-                    '4 tersedia',
-                    style: TextStyle(
+                  Text(
+                    '$available tersedia',
+                    style: const TextStyle(
                       fontSize: 18.0,
                     ),
                   ),
@@ -141,12 +94,12 @@ class ParkingAreaPage extends StatelessWidget {
               mainAxisSpacing: 20.0,
               crossAxisSpacing: 20.0,
             ),
-            itemCount: parkingAreas.length,
+            itemCount: parkingLocationEntity.parkingAreas.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
               return ParkingAreaCard(
-                parkingArea: parkingAreas[index],
+                parkingArea: parkingLocationEntity.parkingAreas[index],
               );
             },
           ),

@@ -11,13 +11,13 @@ abstract class AuthRemoteDatasource {
   factory AuthRemoteDatasource(Dio dio, {required String baseUrl}) =
       _AuthRemoteDatasource;
   @POST('login')
-  Future<ApiBaseResponse<List<AuthResponseModel>>> login({
+  Future<ApiBaseResponse<AuthResponseModel>> login({
     @Field('no_telp') required String phoneNumber,
     @Field('password') required String password,
   });
 
   @GET('show')
-  Future<ApiBaseResponse<List<UserResponseModel>>> show();
+  Future<ApiBaseResponse<UserResponseModel>> show();
 
   @POST('logout')
   Future<String> logout();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/voucher_entity.dart';
+import '../../domain/models/voucher_model.dart';
 import '../widgets/voucher_card.dart';
 
 class VoucherPage extends StatefulWidget {
@@ -12,21 +12,21 @@ class VoucherPage extends StatefulWidget {
 
 class _VoucherPageState extends State<VoucherPage> {
   final TextEditingController searchController = TextEditingController();
-  final List<VoucherEntity> vouchers = [
-    VoucherEntity(
+  final List<VoucherModel> vouchers = [
+    VoucherModel(
       name: 'Diskon 10% Pembayaran OvoPay',
       code: 'ABCDEF',
       deadline: DateTime(2023, 08, 29, 23, 59),
       discount: 10 / 100,
     ),
-    VoucherEntity(
+    VoucherModel(
       name: 'Diskon 10% Pembayaran OvoPay',
       code: '12345',
       deadline: DateTime(2023, 08, 29, 23, 59),
       discount: 10 / 100,
     ),
   ];
-  List<VoucherEntity> searchResult = [];
+  List<VoucherModel> searchResult = [];
 
   @override
   void initState() {
@@ -49,8 +49,8 @@ class _VoucherPageState extends State<VoucherPage> {
           controller: searchController,
           textInputAction: TextInputAction.search,
           onFieldSubmitted: (value) {
-            List<VoucherEntity> result = [];
-            for (VoucherEntity element in vouchers) {
+            List<VoucherModel> result = [];
+            for (VoucherModel element in vouchers) {
               if (element.code == searchController.text) {
                 result.add(element);
               }

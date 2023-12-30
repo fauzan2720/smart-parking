@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'core.dart';
 import 'features/auth/auth.dart';
 import 'features/auth/presentation/pages/splash_screen.dart';
+import 'features/parking/parking.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -14,6 +15,7 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         ...Auth.blocProviders,
+        ...Parking.blocProviders,
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

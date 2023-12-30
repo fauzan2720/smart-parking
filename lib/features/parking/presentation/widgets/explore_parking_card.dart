@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/parking_location_entity.dart';
+import '../../domain/models/explore_parking_model.dart';
 
 class ExploreParkingCard extends StatelessWidget {
-  final ParkingLocationEntity parkingLocationEntity;
+  final ExploreParkingModel parkingLocationEntity;
   final VoidCallback onTap;
 
   const ExploreParkingCard({

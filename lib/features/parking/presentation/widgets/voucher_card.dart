@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/voucher_entity.dart';
+import '../../domain/models/voucher_model.dart';
 
 class VoucherCard extends StatelessWidget {
-  final VoucherEntity voucherEntity;
+  final VoucherModel voucherEntity;
   final void Function(bool isClaim) onTap;
 
   const VoucherCard({

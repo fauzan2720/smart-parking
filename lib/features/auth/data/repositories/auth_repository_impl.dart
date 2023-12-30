@@ -29,14 +29,14 @@ class AuthRepositoryImpl implements AuthRepository {
         phoneNumber: phoneNumber,
         password: password,
       );
-      final auth = result.data![0];
+      final auth = result.data!;
       final accessToken = '${auth.tokenType} ${auth.token}';
 
       await _db.upsertTokens(token: accessToken);
 
       return Right(accessToken);
     } on DioException catch (e) {
-      return Either.left(getUnexpectedFailure(e));
+      return Left(getUnexpectedFailure(e));
     } catch (e) {
       return Left(RequestFailure(e.toString()));
     }
@@ -46,9 +46,9 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, UserModel>> show() async {
     try {
       final result = await _remoteDatasource().show();
-      return Right(result.data!.first.toDomain());
+      return Right(result.data!.toDomain());
     } on DioException catch (e) {
-      return Either.left(getUnexpectedFailure(e));
+      return Left(getUnexpectedFailure(e));
     } catch (e) {
       return Left(RequestFailure(e.toString()));
     }
@@ -63,7 +63,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
       return Right(result);
     } on DioException catch (e) {
-      return Either.left(getUnexpectedFailure(e));
+      return Left(getUnexpectedFailure(e));
     } catch (e) {
       return Left(RequestFailure(e.toString()));
     }
