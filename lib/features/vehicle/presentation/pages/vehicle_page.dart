@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core.dart';
-import '../../domain/entities/vehicle_entity.dart';
+import '../../domain/models/vehicle_model.dart';
 import '../widgets/vehicle_card.dart';
 import 'add_vehicle.dart';
 import 'edit_vehicle.dart';
@@ -11,8 +11,8 @@ class VehiclePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<VehicleEntity> vehicles = [
-      VehicleEntity(
+    List<VehicleModel> vehicles = [
+      VehicleModel(
         id: '1',
         name: 'Ferrari F8 Tributo',
         plate: 'B 1234 ABC',
@@ -25,7 +25,7 @@ class VehiclePage extends StatelessWidget {
         userWithVehicleImage:
             'https://upload.wikimedia.org/wikipedia/commons/0/00/2021_Ferrari_F8_Tributo.jpg',
       ),
-      VehicleEntity(
+      VehicleModel(
         id: '2',
         name: 'Porsche 911 GT3',
         plate: 'B 5678 DEF',
@@ -38,7 +38,7 @@ class VehiclePage extends StatelessWidget {
         userWithVehicleImage:
             'https://imgx.gridoto.com/crop/84x7:1810x1074/700x465/photo/2021/12/18/manthey-racing-porsche-911-gt3-5-20211218113705.jpg',
       ),
-      VehicleEntity(
+      VehicleModel(
         id: '3',
         name: 'Lamborghini Huracan EVO',
         plate: 'B 9012 GHI',

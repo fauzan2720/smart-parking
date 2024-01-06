@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/vehicle_entity.dart';
+import '../../domain/models/vehicle_model.dart';
 
 class VehicleCard extends StatelessWidget {
-  final VehicleEntity vehicleEntity;
+  final VehicleModel vehicleEntity;
   final void Function() onEditTap;
   final void Function() onDeleteTap;
 
