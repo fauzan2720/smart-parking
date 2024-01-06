@@ -1,4 +1,4 @@
-class VehicleEntity {
+class VehicleModel {
   final String id;
   final String name;
   final String plate;
@@ -7,7 +7,7 @@ class VehicleEntity {
   final String backVehicleImage;
   final String userWithVehicleImage;
 
-  VehicleEntity({
+  VehicleModel({
     required this.id,
     required this.name,
     required this.plate,

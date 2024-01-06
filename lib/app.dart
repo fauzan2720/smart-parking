@@ -6,6 +6,7 @@ import 'core.dart';
 import 'features/auth/auth.dart';
 import 'features/auth/presentation/pages/splash_screen.dart';
 import 'features/parking/parking.dart';
+import 'features/vehicle/vehicle.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
       providers: [
         ...Auth.blocProviders,
         ...Parking.blocProviders,
+        ...Vehicle.blocProviders,
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

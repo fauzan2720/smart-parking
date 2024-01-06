@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core.dart';
-import '../../domain/entities/vehicle_entity.dart';
+import '../../domain/models/vehicle_model.dart';
 
 class EditVehicle extends StatefulWidget {
-  final VehicleEntity vehicleEntity;
+  final VehicleModel vehicleEntity;
 
   const EditVehicle({
     super.key,
